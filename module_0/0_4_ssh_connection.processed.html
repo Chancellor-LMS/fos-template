@@ -1,0 +1,91 @@
+<h4 id="section-overview" tabindex="-1">Section Overview</h4>
+<p><code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">Note: This guide maybe useful if you dont have VSCode installed on your local device and only using a shell interface.</code>. Using something like Putty / VSCode may save some headache.</p>
+<p>In the QUT AWS Cloud environment we can use AWS System Manager component session manager to enable connectivity to a Virtual Machine's command line. This tunnel can also be used to transfer files.</p>
+<ul>
+<li>This guide demonstrates how to perform these tasks on Windows local</li>
+<li>There are two shells this process will work for - Bash &amp; PowerShell</li>
+</ul>
+<h4 id="references" tabindex="-1">References</h4>
+<ul>
+<li><a href="https://aws.amazon.com/systems-manager/features/#Session_Manager">AWS Systems manager</a></li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">Session Manager</a></li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html">SSH Connection</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/">Port Forwarding</a></li>
+</ul>
+<h4 id="prerequisites" tabindex="-1">Prerequisites</h4>
+<ul>
+<li><strong>Access Key</strong>: When you build the VM you wish to connect to in this manner you must download the Access key (.pem file) during the build process</li>
+<li><strong>AWS CLI</strong>: If you haven't already download &amp; install on your local: <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html</a></li>
+<li><strong>AWS SSM Plugin</strong>: If you haven't already download &amp; install on your local: <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html</a></li>
+</ul>
+<h4 id="how-to-guide" tabindex="-1">How-To Guide</h4>
+<ol>
+<li>To enable this service first you have to create a configuration file on your local device. You can add both the Bash &amp; the PowerShell commands into the configuration file but there is an order of precedence with a depth of 1 that means only the first command listed is the one that is read the other is ignored.</li>
+</ol>
+<p>so you must put the one you intend to use first!</p>
+<ul>
+<li>You may need to create a new file in this folder location</li>
+<li>the file needs to be called &quot;config&quot;</li>
+<li>copy the code block from below</li>
+</ul>
+<p><strong>Config Code for PowerShell</strong></p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Folder Location:	</span>
+<span class="hljs-attribute" style="color: #79c0ff;">C</span>:\Users\&lt;username&gt;\.ssh
+<span class="hljs-comment" style="color: #8b949e;"># SSH over Session Manager</span>
+<span class="hljs-attribute" style="color: #79c0ff;">host</span> i-* mi-*
+    <span class="hljs-attribute" style="color: #79c0ff;">ProxyCommand</span> C:\Windows\System32\WindowsPowerShell\v1.<span class="hljs-number" style="color: #79c0ff;">0</span>\powershell.exe <span class="hljs-string" style="color: #a5d6ff;">&quot;aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p&quot;</span>
+</code></pre>
+<p><strong>Config Code for Bash</strong></p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Folder Location:	</span>
+<span class="hljs-comment" style="color: #8b949e;"># C:\Users\&lt;username&gt;\.ssh</span>
+<span class="hljs-comment" style="color: #8b949e;"># SSH over Session Manager</span>
+host i-* mi-*
+    ProxyCommand <span class="hljs-keyword" style="color: #ff7b72;">sh </span>-c <span class="hljs-string" style="color: #a5d6ff;">&quot;aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters &#x27;portNumber=%p&#x27;&quot;</span>
+</code></pre>
+<p>If you inspect this file with VSCode/IDE for example, you might get something likes of this:</p>
+<p><img src="img_0_4_1_public_ssh.png" alt></p>
+<ol>
+<li>Connecting from your local device.</li>
+</ol>
+<ul>
+<li>Take note of where your .pem file is located (in the example it is in our downloads folder)</li>
+<li>Take note of what you named your .pem file</li>
+<li>Take note of the Public DNS Record for the VM you are connecting to</li>
+<li>Open either your Bash or PowerShell shell</li>
+<li>Type the ssh command</li>
+</ul>
+<p><strong>Config Code for Powershell</strong></p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">ssh -i C:\Users\<span class="hljs-variable" style="color: #79c0ff;">&lt;username&gt;</span>\Downloads\<span class="hljs-variable" style="color: #79c0ff;">&lt;nameOfPemFile&gt;</span>.pem ubuntu<span class="hljs-meta" style="color: #79c0ff;">@PublicDNSRecord</span>
+</code></pre>
+<p>A Sample to do this is:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-attribute" style="color: #79c0ff;">ssh</span> -i <span class="hljs-string" style="color: #a5d6ff;">&quot;C:\Users\alan\Downloads\yu39-key.pem&quot;</span> ubuntu@ec2-<span class="hljs-number" style="color: #79c0ff;">3</span>-<span class="hljs-number" style="color: #79c0ff;">26</span>-<span class="hljs-number" style="color: #79c0ff;">199</span>-<span class="hljs-number" style="color: #79c0ff;">141</span>.ap-southeast-<span class="hljs-number" style="color: #79c0ff;">2</span>.compute.amazonaws.com
+</code></pre>
+<p><strong>Config Code for Bash</strong></p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">ssh -i <span class="hljs-regexp" style="color: #a5d6ff;">/c/Users/</span>&lt;username&gt;<span class="hljs-regexp" style="color: #a5d6ff;">/Downloads/</span>&lt;nameOfPemFile&gt;.pem ubuntu@PublicDNSRecord
+</code></pre>
+<ol start="3">
+<li>Transferring files from your local device</li>
+</ol>
+<ul>
+<li>Take note of where your .pem file is located (in the example - it is in our downloads folder)</li>
+<li>Take note of what you named your .pem file</li>
+<li>Take note of the instance id for the VM you are connecting to</li>
+<li>Take note of the location the file you want to copy is on your local</li>
+<li>Take note of the location you want the file to go on the VM</li>
+<li>Open either your Bash or PowerShell shell</li>
+<li>Type the scp command</li>
+</ul>
+<p><strong>Config Code for PowerShell</strong></p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">scp -i <span class="hljs-symbol" style="color: #ffa657;">C:</span>\user\&lt;username&gt;\<span class="hljs-title class_" style="color: #d2a8ff;">Downloads</span>\&lt;nameOfPemFile&gt;.pem <span class="hljs-symbol" style="color: #ffa657;">C:</span>\<span class="hljs-title class_" style="color: #d2a8ff;">Users</span>\&lt;username&gt;\<span class="hljs-title class_" style="color: #d2a8ff;">Downloads</span>\&lt;nameOfFiletoCopy&gt; ubuntu<span class="hljs-variable" style="color: #79c0ff;">@PublicDNSRecord</span><span class="hljs-symbol" style="color: #ffa657;">:~&lt;directoryName&gt;&lt;fileName&gt;</span>
+</code></pre>
+<p><strong>Config Code for Bash</strong></p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">scp -i <span class="hljs-regexp" style="color: #a5d6ff;">/c/user/</span>&lt;username&gt;<span class="hljs-regexp" style="color: #a5d6ff;">/Downloads/</span>&lt;nameOfPemFile&gt;.pem ubuntu@PublicDNSRecord
+c<span class="hljs-regexp" style="color: #a5d6ff;">/Users/</span>&lt;username&gt;<span class="hljs-regexp" style="color: #a5d6ff;">/Downloads/</span>&lt;nameOfFiletoCopy&gt;
+</code></pre>
+<h4 id="common-errors" tabindex="-1">Common errors</h4>
+<ul>
+<li>For linux users, you might need to use <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">chmod 600</code>. Windows there is no need to do this (unless using WSL).</li>
+<li>Check that the endpoint is hitting the publicdnsrecords. There are guides that use IP / PublicDNS (depending on when it was written). The latest seems to use PublicDNS</li>
+<li>You may require configuration of some global variables. To do this, you can get the details from the homepage (Command line or programmatic access):</li>
+</ul>
+<p><img src="img_0_4_2_further_details.png" alt></p>

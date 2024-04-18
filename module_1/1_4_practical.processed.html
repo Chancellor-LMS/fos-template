@@ -1,0 +1,188 @@
+<p></p><div class="toc" style="border: 1px solid #eee; background-color: #f2faff; border-left: 2px solid #0066b9; border-left-width: 0.25rem; border-radius: 3px; margin-bottom: 12px; padding: 0 1rem;"><div class="toc-header" style="color: #0066b9; padding: 1rem 1rem 0; margin: 0 -1rem; font-size: 1.5rem;">Table of Contents</div><ul><li><a href="#module-1-practical-introduction">Module 1 Practical Introduction</a><ul><li><ul><li><a href="#getting-started-with-aws">Getting Started with AWS</a></li><li><a href="#prerequisites-and-references">Prerequisites and References</a></li></ul></li></ul></li><li><a href="#exercise-1">Exercise 1</a><ul><li><ul><li><a href="#step-1%3A-log-in-to-the-qut-aws-cloud.">Step 1: Log in to the QUT AWS cloud.</a></li><li><a href="#step-2%3A-create-a-linux-virtual-machine-in-the-qut-aws-cloud">Step 2: Create a Linux virtual machine in the QUT AWS cloud</a></li><li><a href="#step-3%3A-connect-to-your-vm-with-the-web-based-session-manager">Step 3: Connect to your VM with the web-based Session Manager</a></li><li><a href="#step-4%3A-get-yourself-set-up-with-a-secure-shell-(ssh)-client">Step 4: Get yourself set up with a secure shell (SSH) client</a></li><li><a href="#step-5-(prereq)%3A-use-a-secure-shell-(ssh)-client-(putty)-to-connect-to-the-running-vm">Step 5 (Prereq): Use a secure shell (SSH) client (Putty) to connect to the running VM</a></li><li><a href="#step-5a%3A-use-a-secure-shell-(ssh)-client-(putty)-to-connect-to-the-running-vm">Step 5a: Use a secure shell (SSH) client (Putty) to connect to the running VM</a></li><li><a href="#step-5b%3A-use-a-secure-shell-(ssh)-client-(bash)-to-connect-to-the-running-vm">Step 5b: Use a secure shell (SSH) client (Bash) to connect to the running VM</a></li><li><a href="#step-6%3A-host-a-simple-web-application-on-the-vm">Step 6: Host a simple web application on the VM</a></li><li><a href="#step-7%3A-terminate-the-instance">Step 7: Terminate the instance</a></li></ul></li></ul></li><li><a href="#exercise-2%3A-preparing-linux-environment">Exercise 2: Preparing Linux Environment</a><ul><li><ul><li><a href="#what-questions-remain%3F">What questions remain?</a></li></ul></li></ul></li></ul></div><p></p>
+<h2 id="module-1-practical-introduction" tabindex="-1" style="color: #0066b9;">Module 1 Practical Introduction</h2>
+<h4 id="getting-started-with-aws" tabindex="-1">Getting Started with AWS</h4>
+<p>In this activity you will log in to Amazon Web Services using a QUT student account, create a Linux virtual machine in the cloud, use a secure shell client to connect to the virtual machine, and implement a &quot;Hello World&quot; web application. Finally - and <em>importantly</em> - you will terminate the virtual machine.</p>
+<p>Note that there are a number of ways you can connect to the VM - it is not necessary for you to use all of them today. Please talk to your tutor if you run into difficulties or you are unsure of what to do.</p>
+<h4 id="prerequisites-and-references" tabindex="-1">Prerequisites and References</h4>
+<ul>
+<li>Complete <strong>Week 0: Accessing the Cloud</strong> module (starting with <pagelink>0.1 Overview</pagelink>) and be familiar with accessing AWS.</li>
+<li>AWS: <a href="https://aws.amazon.com/ec2/">What is an EC2 (VM)</a></li>
+<li>AWS: <a href="https://aws.amazon.com/getting-started/launch-a-virtual-machine-B-0/">Guide to Build an EC2</a></li>
+<li>QUT AWS SSO link: <a href="https://d-97671c4bd0.awsapps.com/start#/">https://d-97671c4bd0.awsapps.com/start#/</a></li>
+</ul>
+<hr>
+<h2 id="exercise-1" tabindex="-1" style="color: #0066b9;">Exercise 1</h2>
+<h4 id="step-1%3A-log-in-to-the-qut-aws-cloud." tabindex="-1">Step 1: Log in to the QUT AWS cloud.</h4>
+<p>A dedicated AWS workspace has been created to allow you to access cloud resources  using your QUT credentials. This workspace is to be used strictly for academic purposes. Please check <pagelink>0.2 Logging on to QUT AWS Cloud</pagelink> for more information on how to access.</p>
+<h4 id="step-2%3A-create-a-linux-virtual-machine-in-the-qut-aws-cloud" tabindex="-1">Step 2: Create a Linux virtual machine in the QUT AWS cloud</h4>
+<p>After completing this step you will have a machine running, ready for remote connection and management. We will use Ubuntu 22.04 for this year. You may use later/Older versions if you wish and if you have some Linux expertise.</p>
+<p>Background: You will use an Amazon t2 micro instance running Ubuntu 22.04 to complete the rest of this activity. Always use the smallest instance that allows you to complete the task. Higher spec machines cost more and you won't often need their capabilities.</p>
+<p>Please check <pagelink>0.3 Creating an EC2 Instance</pagelink> for more information on how to create an EC2 instance.</p>
+<h4 id="step-3%3A-connect-to-your-vm-with-the-web-based-session-manager" tabindex="-1">Step 3: Connect to your VM with the web-based Session Manager</h4>
+<p>After completing this step, you can work on your VM in a browser tab.</p>
+<p><strong>Background</strong>: The AWS web-based Session Manager provides convenient interactive access to the VM command line environment.</p>
+<ol>
+<li>
+<p>Start your virtual machine and navigate to the AWS Instances page.</p>
+</li>
+<li>
+<p>Select your running instance and click “Connect”.
+<img src="img_1_4_1_finding_ec2.png" alt="Finding EC2 Instance" title="Finding EC2 Instance"></p>
+</li>
+<li>
+<p>Go to the “Session manager” tab, and click “Connect”
+<img src="img_1_4_2_session_manager.png" alt="Connect to AWS using Session Manager" title="Connect to AWS using Session Manager"></p>
+</li>
+<li>
+<p>Successful log in will lead to a Linux bash session on the VM, hosted in your browser. Use the command cd ~to go to your home directory to start work.</p>
+</li>
+</ol>
+<p><img src="img_1_4_3_ssh_session.png" alt="Connected to Session Manager" title="Connected to Session Manager">
+At this point you may proceed to Step 6 (hosting a simple HTTP server) should you wish. The intermediary steps explore alternative ways of connecting to the VM.</p>
+<h4 id="step-4%3A-get-yourself-set-up-with-a-secure-shell-(ssh)-client" tabindex="-1">Step 4: Get yourself set up with a secure shell (SSH) client</h4>
+<p>This step describes the pre-requisites needed to connect to your VM via SSH using a command shell or GUI client. Once you have completed these instructions, Step 5 tells you how to put this into practice to actually connect to the machine.</p>
+<p>These steps provide an important alternative to the approach in Step 3 above.</p>
+<p><strong>Background</strong>: Secure shell (SSH) is the primary management tool for Linux virtual machines. File transfer can be achieved using SFTP or SCP.</p>
+<p>Secure shell (SSH) is the primary management tool for Linux virtual machines. File transfer can be achieved using SFTP or SCP.</p>
+<ul>
+<li>MacOS, Linux (including WSL2):
+<ul>
+<li>You may find that a SSH client is installed already. To verify that you have the tool, open a terminal window,and enter the command: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">which ssh</code></li>
+<li>If ssh is present the response will be something along the lines of:<code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">/usr/bin/ssh</code></li>
+<li>If the command is not found, you can use your system’s package manager to install an OpenSSH client. In Ubuntu the installation command is: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">sudo apt install openssh-client</code></li>
+</ul>
+</li>
+<li>Windows
+<ul>
+<li>Plenty of choices are available, but we have provided software and detailed instructions for some simple and practical options.
+<ul>
+<li>Modern Windows versions provide the Windows Subsystem for Linux (WSL2). This is a good choice if you would like a reasonably full Linux experience.</li>
+<li>Git is a source code control system which originated in Linux. The Windows port includes a powerful subset of the Minimal GNU for Windows (MINGW) Unix-like environment.
+<ul>
+<li>The MINGW ssh and scp clients understand your VM’s.pemfile without further processing.</li>
+<li>The MINGW terminal providesbash, a good script host which will be handy in later learning activities.</li>
+</ul>
+</li>
+<li>Putty is a dedicated terminal emulation program for Windows which includes separate SFTP and SCP clients. Putty does not understand.pemfiles, so you’ll have to use theputtygenprogram to convert your.pemfile to a.ppkfile for use with Putty.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-5-(prereq)%3A-use-a-secure-shell-(ssh)-client-(putty)-to-connect-to-the-running-vm" tabindex="-1">Step 5 (Prereq): Use a secure shell (SSH) client (Putty) to connect to the running VM</h4>
+<p>Using the VM’s private access key with your SSH client allows you to log on to the VM, install software, and execute programs.</p>
+<ol>
+<li>Start a VM via the AWS management console, and make sure you have access to the .pemprivate keyfile.</li>
+<li>To be concrete, in this walk through we use a key file which has been saved locally as <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">Q:\CAB432\2021_02\AWS_Keys\LawrenceCAB432_key2.pem</code></li>
+<li>Go the EC2 instances page and copy the public IP of your instance. In this walkthrough, the public IP address is <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">13.211.103.201</code>
+<img src="img_1_4_4_public_ip.png" alt="Getting Public IP" title="Getting Public IP"></li>
+</ol>
+<h4 id="step-5a%3A-use-a-secure-shell-(ssh)-client-(putty)-to-connect-to-the-running-vm" tabindex="-1">Step 5a: Use a secure shell (SSH) client (Putty) to connect to the running VM</h4>
+<ol>
+<li>Ensure you have putty installed.</li>
+<li>Run puttygento convert the OpenSSH key file to a Putty key file</li>
+<li>Import your.pemprivate key file</li>
+</ol>
+<p><img src="img_1_4_5_import_putty.png" alt="Import Putty" title="Import Putty"></p>
+<ol start="4">
+<li>
+<p>Save the private key file. In this example, we saved as <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">Q:\CAB432\2021_02\AWS_Keys\LawrenceCAB432_key2.ppk</code>
+<img src="img_1_4_6_putygen.png" alt="PuttyGen" title="PuttyGen"></p>
+</li>
+<li>
+<p>Run putty, and on the session tab, insert public IP address of VM</p>
+</li>
+</ol>
+<p><img src="img_1_4_7_putty_ip.png" alt="Public IP input putty" title="Public IP input putty"></p>
+<ol start="6">
+<li>On the connections tab, open the private key (.ppk) file.</li>
+</ol>
+<p><img src="img_1_4_8_putty_auth.png" alt="Adding Key" title="Adding Key"></p>
+<ol start="7">
+<li>You are now set. Open the connection, accept the prompts if any.</li>
+<li>Login as the user <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">ubuntu</code> when prompted. This will open a linux bash session on the VM.</li>
+</ol>
+<h4 id="step-5b%3A-use-a-secure-shell-(ssh)-client-(bash)-to-connect-to-the-running-vm" tabindex="-1">Step 5b: Use a secure shell (SSH) client (Bash) to connect to the running VM</h4>
+<ol>
+<li>Make sure you have a suitable command line environment set up, e.g., Linux, MacOS, or something like MINGW</li>
+<li>Open a terminal window with access to ssh</li>
+<li>Use the saved private key file and IP address to connect to the VM. For example: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">ssh -i /Q/CAB432/2021_02/AWS_Keys/LawrenceCAB432_key2.pem -l ubuntu 13.211.103.201</code></li>
+<li>Replace the file name and IP address with values corresponding to your situation. When prompted to save the key, enter yes. Successful log in will lead to a Linux bash session on the VM</li>
+</ol>
+<h4 id="step-6%3A-host-a-simple-web-application-on-the-vm" tabindex="-1">Step 6: Host a simple web application on the VM</h4>
+<p>After completing this step, you will be able to access a basic web site hosted on the VM. Installing Python lets you host a simple HTTP web site.</p>
+<p>To undertake this step, you must have connected to the VM using one of the methods described above.</p>
+<ol>
+<li>Install Python:<code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">sudo apt-get install python</code></li>
+<li>Make a new directory for the website and change into it: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">mkdir server &amp;&amp; cd server</code></li>
+<li>Create a small HTML document. If you know a Linux editor already you can create the file and include the html given below. If not, this shell echo statement will create a file for you:</li>
+</ol>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">echo &gt;hello.html &#x27;<span class="hljs-tag">&lt;<span class="hljs-name" style="color: #7ee787;">html</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name" style="color: #7ee787;">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name" style="color: #7ee787;">h1</span>&gt;</span>HelloCAB432!!!<span class="hljs-tag">&lt;/<span class="hljs-name" style="color: #7ee787;">h1</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name" style="color: #7ee787;">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name" style="color: #7ee787;">html</span>&gt;</span>&#x27;
+</code></pre>
+<ol start="5">
+<li>Host the web site: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">python -m http.server 3000</code></li>
+<li>Stay logged on to the VM and open a new browser tab.</li>
+<li>Navigate to your document on the VM. In the concrete example used for this walk-through, the address is <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">http://13.211.103.201:3000/hello.html</code>. Replace with the IP address of your own VM.</li>
+</ol>
+<p><strong>A note on security:</strong> The Python HTTP Server is a great tool for testing, local development and quick learning exercises like this one. However, it's not designed with security in mind and lacks the robustness required for a production environment. In future weeks we will explore web servers that are specifically designed to host production-level applications.</p>
+<h4 id="step-7%3A-terminate-the-instance" tabindex="-1">Step 7: Terminate the instance</h4>
+<p>Even stopped instances continue to incur AWS charges, so when you complete the exercise, terminate the instance.</p>
+<ol>
+<li>Use the Terminate option on the Instance state menu to delete the VM.</li>
+</ol>
+<hr>
+<h2 id="exercise-2%3A-preparing-linux-environment" tabindex="-1" style="color: #0066b9;">Exercise 2: Preparing Linux Environment</h2>
+<p><strong>If you are using a Linux machine, you can skip this step.</strong></p>
+<p>In some earlier versions of this unit we supported Docker under both Linux and Windows.</p>
+<ul>
+<li>Docker Windows 7 does not play nicely. Use the cloud machines or the Virtual Box approach outlined below or update to Windows 10 or Windows 11.  WSL or Windows 10+ are just fine in my experience.</li>
+<li>Docker for Windows 10/11 is much better and it is known also to work well in the Windows Subsystem for Linux – though there are configuration issues which mean this isn’t the case for QUT lab machines.</li>
+</ul>
+<p><strong>Setting up WSL</strong></p>
+<p>We will be using the following instructions to set up WSL on Windows 11.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-gb/windows/wsl/install">https://learn.microsoft.com/en-gb/windows/wsl/install</a></li>
+<li><a href="https://code.visualstudio.com/docs/remote/wsl">https://code.visualstudio.com/docs/remote/wsl</a></li>
+</ul>
+<ol>
+<li>Ensure Windows Subsystem for Linux is enabled. Go to Settings &gt; Apps &gt; Optional Features &gt; More Windows Features and ensure Windows Subsystem for Linux is enabled.</li>
+</ol>
+<p><img src="img_2_4_1_wsl_setting.png" alt="WSL Setting" title="WSL Setting"></p>
+<ol start="2">
+<li>Open PowerShell in Admin mode. Run the following command to install WSL 2.</li>
+</ol>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-attribute" style="color: #79c0ff;">wsl</span> --install -d ubuntu-<span class="hljs-number" style="color: #79c0ff;">22</span>.<span class="hljs-number" style="color: #79c0ff;">04</span>
+</code></pre>
+<p>If this dosen't work, you can check the following:</p>
+<ul>
+<li>Ensure that the setting is turned on in Exercise 1. You might need to restart the computer.</li>
+<li>Ensure Admin mode is set for your PowerShell instance</li>
+<li>Check if an existing wsl is running. If so, you can run the following command to terminate it. <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">wsl --shutdown</code></li>
+<li>Check if your Windows Store can download things properly - the WSL installation is done through the Windows Store. If you can't download anything from the Windows Store, you might need to check your network settings.
+<ul>
+<li>If your Windows Store cannot install WSL, try <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">SFC /scannow</code> in PowerShell to check for any system file corruption. You might need to restart the computer after this.</li>
+<li>Try reset windwos store via <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">wsreset</code> in PowerShell.</li>
+<li>You can also try reinstalling the Windows Store app. You can do this by running the following command in PowerShell. <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">Get-AppXPackage -allusers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register &quot;$($_.InstallLocation)\AppXManifest.xml&quot;}</code></li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>On VSCode, Install the WSL extension. You can do this by going to the Extensions tab on the left side of the screen and searching for &quot;WSL&quot;. Click install.</li>
+</ol>
+<p><img src="img_2_4_2_wsl_extension.png" alt="WSL" title="WSL"></p>
+<ol start="4">
+<li>Open Ubuntu via Start Menu - we are going to configure our username/password. A new terminal should open. After installing, it should prompt a username and passcode.</li>
+</ol>
+<p><img src="img_2_4_3_wsl_open.png" alt="Opening WSL Terminal" title="Opening WSL Terminal">
+<img src="img_2_4_4_wsl_config.png" alt="Config Username First time" title="Config Username First time"></p>
+<ol start="5">
+<li>Once you are in WSL, you can install VSCode. You can do this by running the following command in the terminal <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">code .</code>. This will install/open the current dir in VScode. You might want to trust the current workspace. On the bottom left hand side, you can see that the vscode terminal is connected to the WSL environment.</li>
+</ol>
+<p><img src="img_2_4_5_wsl_vscode.png" alt="Install and Open VScode" title="Install and Open VScode"></p>
+<p><strong>Virtual Box Approach</strong></p>
+<p>Oracle’s Virtual Box is a very widely used VM manager for Windows. It is very convenient and really doesn’t take too much time to set up and use productively. The downloads are found at: <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></p>
+<p>When you look at the page, as shown above, you will also see a link to pre-built images. These are for Oracle’s versions of Linux, so for consistency with our cloud images, do not click on this link. Instead, follow the download and installation instructions that you find in this blog below: <a href="http://www.beopensource.com/2018/02/Install-Ubuntu-18.04-Virtual-Box.html">http://www.beopensource.com/2018/02/Install-Ubuntu-18.04-Virtual-Box.html</a></p>
+<p>We have not updated this material for some time as we now recommend the WSL approach if you are working under Windows. Please let us know if there are any issues and we can probably help you out.</p>
+<hr>
+<h4 id="what-questions-remain%3F" tabindex="-1">What questions remain?</h4>
+<p>If you have questions about this practical, please post them on the <discussion>Practical 1 questions</discussion> discussion board.</p>

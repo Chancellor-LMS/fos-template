@@ -1,0 +1,527 @@
+<p></p><div class="toc" style="border: 1px solid #eee; background-color: #f2faff; border-left: 2px solid #0066b9; border-left-width: 0.25rem; border-radius: 3px; margin-bottom: 12px; padding: 0 1rem;"><div class="toc-header" style="color: #0066b9; padding: 1rem 1rem 0; margin: 0 -1rem; font-size: 1.5rem;">Table of Contents</div><ul><li><a href="#module-2-practical-introduction">Module 2 Practical Introduction</a><ul><li><ul><li><a href="#getting-started-with-docker">Getting Started with Docker</a></li><li><a href="#prerequisites-and-references">Prerequisites and References</a></li><li><a href="#week-2-practical-files">Week 2 Practical Files</a></li></ul></li></ul></li><li><a href="#exercise-1%3A-installing-and-using-docker">Exercise 1: Installing and using Docker</a><ul><li><ul><li><a href="#step-1%3A-run-command-to-install-docker.">Step 1: Run Command to install docker.</a></li><li><a href="#step-2%3A-test-run-hello-world-example.">Step 2: Test run hello-world example.</a></li><li><a href="#step-3%3A-download-ubuntu-image-and-whalesay.">Step 3: Download Ubuntu image and whalesay.</a></li></ul></li></ul></li><li><a href="#exercise-2%3A-preserving-docker-%2F-vm-images">Exercise 2: Preserving Docker / VM Images</a><ul><li><ul><li><a href="#step-1%3A-create-ami-image">Step 1: Create AMI Image</a></li><li><a href="#step-2%3A-creating-storage">Step 2: Creating Storage</a></li><li><a href="#step-3%3A-restoring-the-image">Step 3: Restoring the Image</a></li></ul></li></ul></li><li><a href="#exercise-3%3A-ubuntu-with-python-server-(hello-world)">Exercise 3: Ubuntu with Python Server (Hello World)</a><ul><li><ul><li><a href="#step-1%3A-start-your-image">Step 1: Start your image</a></li><li><a href="#step-2%3A-open-docker-terminal-prompt">Step 2: Open Docker terminal prompt</a></li><li><a href="#step-3%3A-get-the-list-of-docker-images">Step 3: Get the list of docker images</a></li><li><a href="#step-4%3A-cd-to-your-docker-work-area">Step 4: CD to your Docker work area</a></li><li><a href="#step-5%3A-create-directory-structure">Step 5: Create directory structure</a></li><li><a href="#step-6%3A-download-required-files">Step 6: Download required files</a></li><li><a href="#step-7%3A-create-dockerfile">Step 7: Create Dockerfile</a></li><li><a href="#step-8%3A-build-image">Step 8: Build image</a></li><li><a href="#step-9%3A-run-docker-image">Step 9: Run Docker Image</a></li><li><a href="#step-10%3A-check-container">Step 10: Check Container</a></li></ul></li></ul></li><li><a href="#exercise-4%3A-ubuntu-with-python-server-(word-count)">Exercise 4: Ubuntu with Python Server (Word Count)</a><ul><li><ul><li><a href="#step-1%3A-configure-work-area">Step 1: Configure work area</a></li><li><a href="#step-2.-edit-dockerfile.">Step 2. Edit Dockerfile.</a></li><li><a href="#step-3%3A-update-app.py">Step 3: Update app.py</a></li><li><a href="#step-4%3A-build-docker-image">Step 4: Build Docker Image</a></li><li><a href="#step-5%3A-launch-docker-image">Step 5: Launch Docker image</a></li></ul></li></ul></li><li><a href="#exercise-5%3A-word-count-without-stop-words">Exercise 5: Word Count Without Stop Words</a><ul><li><ul><li><a href="#step-1%3A-import-stop-words">Step 1: Import stop words</a></li><li><a href="#step-2%3A-create-stopwords">Step 2: Create stopwords</a></li><li><a href="#step-3%3A-config-filtering">Step 3: Config filtering</a></li><li><a href="#step-5%3A-push-to-dockerhub">Step 5: Push to Dockerhub</a></li></ul></li></ul></li><li><a href="#appendices">Appendices</a><ul><li><ul><li><a href="#completed-word-cloud-script">Completed word cloud script</a></li><li><a href="#further-details%3A-docker-at-home">Further Details: Docker at home</a></li><li><a href="#further-details%3A-linux-command-line-and-editors">Further Details: Linux Command Line and Editors</a></li><li><a href="#what-questions-remain%3F">What questions remain?</a></li></ul></li></ul></li></ul></div><p></p>
+<h2 id="module-2-practical-introduction" tabindex="-1" style="color: #0066b9;">Module 2 Practical Introduction</h2>
+<h4 id="getting-started-with-docker" tabindex="-1">Getting Started with Docker</h4>
+<blockquote>
+<p>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.</p>
+<p>Docker is lightweight and fast. It provides a viable, cost-effective alternative to hypervisor-based virtual machines, so you can use more of your server capacity to achieve your business goals. Docker is perfect for high density environments and for small and medium deployments where you need to do more with fewer resources.</p>
+<p>Source: <a href="https://docs.docker.com/get-started/overview/">Docker Documentation</a></p>
+</blockquote>
+<p><em>Please continue reading the Docker overview page in the official documentation, <a href="https://docs.docker.com/get-started/overview">here</a>.</em></p>
+<p>Docker is available in two guises:</p>
+<ol>
+<li>
+<p>For enterprise customers (paid)</p>
+</li>
+<li>
+<p>For customers in the community (free; we will use this one)</p>
+</li>
+</ol>
+<p>In this practical, we will work with Docker under Linux. Specifically, in an EC2 instance as created in practical 1. You may also run Docker on Windows or Mac OS. Please note, if you are using an older version Windows, Docker may not be compatible. Please see the instructions and links in the appendix for details of these alternatives. Unfortunately, we cannot directly support every operating system. This practical assumes that your virtual machine is running a recent version of Ubuntu.</p>
+<p>Note about Assignment 1: you will need to use Docker in a specific Linux VM. We will provide more information at appropriate times.</p>
+<p>Note: Some screenshots may have minor inconsistencies due to command updates (Python 3) and recent EC2 updates from AWS. If you have any problems, please do not hesitate to contact the teaching team or consult your peers.</p>
+<p>The basics of using Docker are covered very nicely in Docker’s own tutorials.  The full tutorial will take about 30 minutes if things go according to plan.</p>
+<h4 id="prerequisites-and-references" tabindex="-1">Prerequisites and References</h4>
+<p>In this unit, we will work mainly with the Linux version of Docker, and the supported version will be <strong>Ubuntu LTS 22.04</strong>. It is a requirement of this prac exercise, and assignment 1, that you are able to deploy your Docker container to the public cloud. At some point, you will need to launch a VM on AWS. Preparation of the Docker image can take place anywhere you can access a tame Linux workstation.</p>
+<ul>
+<li>Access to a Linux system:
+<ul>
+<li><strong>This approach is used in this practical:</strong>
+<ul>
+<li>Use one Linux VM to prepare the image</li>
+<li>Use another VM for deployment of the container after we have pushed it to Docker Hub.</li>
+</ul>
+</li>
+<li>Using personal Linux machines (i.e., Linux installed as the host operating system)</li>
+<li>Docker under Windows Subsystem for Linux
+<ul>
+<li><a href="https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2">Visual Studio documentation</a></li>
+<li>Note: this doesn’t work well on the QUT lab machines</li>
+</ul>
+</li>
+<li>Using Virtual Box <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>
+<ul>
+<li>Install Linux as a guest operating system</li>
+<li>or an alternative VM manager</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Installation of Docker: this is essentially the same as the approach in Guide to working with the QUT managed AWS machines, though you can use the apt-get mechanism if you prefer</li>
+<li>Creating an account on Docker Hub:
+<ul>
+<li>Similar to GitHub for storage of your Docker images; once they are pushed to Docker Hub they can be installed and run anywhere e.g. in a cloud server instance.</li>
+<li>This is now wrapped into the Docker Cloud but the Hub is still the service we require.</li>
+</ul>
+</li>
+<li><a href="https://docs.docker.com/">Docker reference</a></li>
+<li>Docker Getting started guide: <a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/ </a>.
+<ul>
+<li>This is particularly good on the terminology and concepts.
+<ul>
+<li>For example, you should be familiar with the distinction between the container and the image.</li>
+</ul>
+</li>
+<li>In various places, the guide mentions Docker services for the cloud platforms AWS and Azure.
+<ul>
+<li>Please <strong>do not</strong> use these.</li>
+<li>They are set up for orchestrated deployment at scale, integrated with the cloud services.</li>
+<li>They are important but they are not suitable as a starting point. Let’s understand the basics first.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="week-2-practical-files" tabindex="-1">Week 2 Practical Files</h4>
+<ul>
+<li><a href="https://canvas.qut.edu.au/courses/19735/files/3929140/download">DockerPrac.zip</a></li>
+</ul>
+<hr>
+<h2 id="exercise-1%3A-installing-and-using-docker" tabindex="-1" style="color: #0066b9;">Exercise 1: Installing and using Docker</h2>
+<p>We will follow the installation process for Docker as provided in the AWS Guide. As noted earlier, there may be some differences between the screenshots below and what you will see in the QUT environment.</p>
+<p>Docker is fundamentally a system built for use under Linux, and you should experience few problems installing under a native Linux environment. The relevant section from the AWS Guide is included below. This should also work seamlessly from local installations of Ubuntu.</p>
+<p>We will begin by installing Docker, and running a basic sanity check deployment of &quot;hello-world&quot;. Docker exists at: https://www.docker.com/. To install new software, we would normally use the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">apt-get</code> application, but here there are more convenient alternatives.</p>
+<p>If you haven't already, boot up an Linux VM (or connect to the AWS EC2 instance you created in Week 1).</p>
+<p>In this guide, we will be using VSCode to connect to the VM. You may see images of older screenshots being used, but the steps are the same.</p>
+<h4 id="step-1%3A-run-command-to-install-docker." tabindex="-1">Step 1: Run Command to install docker.</h4>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">sudo curl -fsSL https://<span class="hljs-built_in" style="color: #ffa657;">get</span>.docker.<span class="hljs-keyword" style="color: #ff7b72;">com</span>/ | <span class="hljs-keyword" style="color: #ff7b72;">sh</span>
+</code></pre>
+<p>By default, your machine should have curl installed. Use <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">sudo</code> to ensure that the installation scripts have elevated privileges. Once the Docker installation is complete, you should run a basic Docker hello world to confirm that everything is running as expected.</p>
+<p>During the installation process, you may be offered the chance to add a username to the Docker group. If you are able to do this, make the adjustment for your chosen username. If you did not do this, then you will need to run the Docker commands below prefixed by <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">sudo</code>. If you encounter the error that Docker cannot connect to the Docker daemon, this is almost certainly the issue, and the use of <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">sudo</code> (though not exactly ideal practice) will allow you to proceed.</p>
+<p>For my instance, I had to run the following command to ensure docker plays nicely:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Some additional setup - to make it run nicely without sudo! </span>
+sudo <span class="hljs-keyword" style="color: #ff7b72;">sh </span>-eux &lt;&lt;EOF
+<span class="hljs-comment" style="color: #8b949e;"># Install newuidmap &amp; newgidmap binaries</span>
+apt-get <span class="hljs-keyword" style="color: #ff7b72;">install </span>-y uidmap
+EOF
+
+dockerd-rootless-setuptool.<span class="hljs-keyword" style="color: #ff7b72;">sh </span><span class="hljs-keyword" style="color: #ff7b72;">install
+</span></code></pre>
+<p>After successful installation of Docker, you should see something like this:</p>
+<p><img src="img_2_4_6_install_docker.png" alt="Install Docker" title="Install Docker"></p>
+<h4 id="step-2%3A-test-run-hello-world-example." tabindex="-1">Step 2: Test run <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">hello-world</code> example.</h4>
+<p>Let's run the code below. This should run without issue. Try running the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">hello-world</code> example without using <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">sudo</code>:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-built_in" style="color: #ffa657;">run</span> hello-world 
+</code></pre>
+<p>You should see something like this, with an additional message if the image was not available locally and had to be pulled down from the web.</p>
+<p><img src="img_2_4_7_docker_hello.png" alt="Hello World" title="Hello World"></p>
+<h4 id="step-3%3A-download-ubuntu-image-and-whalesay." tabindex="-1">Step 3: Download Ubuntu image and whalesay.</h4>
+<p>We will be using this local copy to work on. We don’t initially have a local copy and so it grabs the image from a remote store at the Docker Hub.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-built_in" style="color: #ffa657;">run</span> -<span class="hljs-keyword" style="color: #ff7b72;">it</span> ubuntu bash
+</code></pre>
+<p><img src="img_2_4_8_docker_download.png" alt="Docker Ubuntu Download" title="Docker Ubuntu Download"></p>
+<p>Note: the username and hostname of the prompt have changed from <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">ubuntu@ip</code> to the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">root@22e...</code>, as shown at the bottom of the screen. We are now in the command interface of Ubuntu within the Docker container, which is sitting on top of Ubuntu on the AWS VM.</p>
+<p>You can press <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">ctrl+c</code> (for Windows) to exist the container.</p>
+<p>Now, let's continue through the tutorial and use the Whalesay image.</p>
+<p>We begin by working with the vanilla Whalesay image. The application is trivial, and is an adaptation of an earlier unix sayings app called cowsay. The details of Whalesay can be found at:</p>
+<ul>
+<li><a href="https://hub.docker.com/r/docker/whalesay/Links">https://hub.docker.com/r/docker/whalesay/Links</a></li>
+</ul>
+<p>Let's run the following command to run whalesay / download if not already.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-keyword" style="color: #ff7b72;">run</span><span class="language-bash"> docker/whalesay cowsay boo</span>
+</code></pre>
+<p><img src="img_2_4_8_whalesay.png" alt="Whalesay" title="Whalesay"></p>
+<p>Don’t take it seriously. Execute the command and we see the screenshot below it:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-keyword" style="color: #ff7b72;">run</span><span class="language-bash"> docker/whalesay cowsay boo</span>
+</code></pre>
+<p><img src="img_2_4_9_whalesay_docker.png" alt="Docker Whalesay" title="Docker Whalesay"></p>
+<p>Note: the content of the whale may change per run.</p>
+<p>We are now going to create a simple Dockerfile following the conventions introduced in the lecture.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-punctuation">#</span> Create a folder to do some builds...
+mkdir mydockerbuild <span class="hljs-punctuation">#</span><span class="hljs-params">(<span class="hljs-variable" style="color: #79c0ff;">create</span> <span class="hljs-variable" style="color: #79c0ff;">a</span> <span class="hljs-variable" style="color: #79c0ff;">directory</span> <span class="hljs-variable" style="color: #79c0ff;">named</span> <span class="hljs-variable" style="color: #79c0ff;">mydockerbuild</span>)</span>
+cd mydockerbuild <span class="hljs-punctuation">#</span><span class="hljs-params">(<span class="hljs-variable" style="color: #79c0ff;">go</span> <span class="hljs-variable" style="color: #79c0ff;">to</span> <span class="hljs-variable" style="color: #79c0ff;">directory</span> <span class="hljs-variable" style="color: #79c0ff;">created</span> <span class="hljs-variable" style="color: #79c0ff;">above</span>)</span>
+</code></pre>
+<p>Usually, you would want to make sure that the system is up-to-date, but since we only just obtained the application, no commands to obtain updates are needed. Note that this will be a common theme in Docker related exercises. We will use this guide to create the Dockerfile and then using Docker to transform this into an image are found here (you may have to scroll up a few lines):</p>
+<p>Please read this article: https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75#6562</p>
+<p>Let's create our first Dockerfile. A <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">Dockerfile</code> is a text document that contains all the commands a user could call on the command line to assemble an image.</p>
+<p>On VSCode, we can simply create a new file, name it <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">Dockerfile</code>, then save it into the working directory we are in (namely <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">mydockerbuild</code>).</p>
+<p>Inside the Dockerfile, put in the following:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-keyword" style="color: #ff7b72;">FROM</span> docker/whalesay:latest
+<span class="hljs-built_in" style="color: #ffa657;">RUN</span> apt-<span class="hljs-built_in" style="color: #ffa657;">get</span> -y update &amp;&amp; apt-<span class="hljs-built_in" style="color: #ffa657;">get</span> install -y fortunes
+CMD /usr/games/fortune -a | cowsay
+</code></pre>
+<p>In general, you will need to build your image with <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker build -t docker-whale .</code> . (here we have tagged our image <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">“docker-whale”</code> - also note the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">.</code> at the end - we need this! ).</p>
+<p>My session is shown below. The output is dominated by the update, some of which I have not shown. Pay particular attention to the steps corresponding to the commands in the Dockerfile, and the intermediate hashes that appear at each stage. This means that if there is an error later on, we don’t have to rebuild everything from scratch when we start again.</p>
+<p><img src="img_2_4_10_docker_build.png" alt>
+<img src="img_2_4_11_docker_build.png" alt></p>
+<p>At this point, we can run the new image that we just tagged. This time, we got a very long quote from Linus Torvalds:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-built_in" style="color: #ffa657;">run</span> docker-whale
+</code></pre>
+<p><img src="img_2_4_12_docker_quote.png" alt></p>
+<p>Finally, the linked tutorial tells you to create your own Docker Hub account and to push your own copy of this new version of the whalesay app. Please create your own account, along with a new repository.</p>
+<p>We will be using this guide to help: https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75#44f4</p>
+<p>After you created your public repository, let's tag our image with the following convention:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-keyword" style="color: #ff7b72;">tag</span> <span class="hljs-title" style="color: #d2a8ff;">&lt;image-id</span> of docker-whale&gt; <span class="hljs-tag">&lt;your dockerhub username&gt;</span>/docker-whale:latest
+</code></pre>
+<p>The next step is to authenticate and login to DockerHub. The docker login command will prompt you for your username and password. You should supply your DockerHub credentials. When entering your password, you won't see any characters in the terminal - this is an intentional security measure. Once successfully authenticated, Docker automatically stores an authentication token on your system that allows you to interact with the registry.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-attribute" style="color: #79c0ff;">docker login</span>
+</code></pre>
+<p>Then we can upload (think of git push) to docker:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-built_in" style="color: #ffa657;">push</span> &lt;<span class="hljs-built_in" style="color: #ffa657;">image</span>-name&gt;
+</code></pre>
+<p>Before moving on to the more complex matters, it will probably help to explore some of the more useful Docker commands and perhaps to clean up a little. There is a reason for this, as we will see shortly.</p>
+<p>Docker follows very standard Linux command line conventions:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-comment" style="color: #8b949e;">--help</span>
+</code></pre>
+<p>This generates a substantial list of commands and alternatives. We will focus on those that manage the images and the containers. To follow through on these exercises, login to the same VM using a second terminal window, or create another xterm if you are using the machine locally. This will allow us to monitor the machine when we have a running Docker container. At present we have no containers running (<code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker ps</code>) but by using <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker ps –a</code>, we can see all of the containers that I have used over the course of the session:</p>
+<p><img src="img_2_4_13_docker_help.png" alt></p>
+<p>Note the new equivalent version of this command: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker container ls</code></p>
+<p>Take note of the hash IDs for some of these containers. In a moment I am going to look at some images, and try to delete the one for docker/whalesay. Here of course we see that this image is associated with the exited container boring_swartz (container names are obviously enough, auto-generated), which has ID cc092d56b24e. Let us now list the images.</p>
+<p><img src="img_2_4_14_docker_images.png" alt></p>
+<p>I don’t really care at all about the whalesay image and so I am going to destroy it. The <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker rm</code> command removes containers; here I want to remove images, and the command is similar, <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker rmi</code>. We can force delete via <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">-f</code> switch.</p>
+<p><img src="img_2_4_15_delete_docker.png" alt></p>
+<p>We now look at docker-whale, and run it again using the usual command:</p>
+<p><img src="img_2_4_16_rerun_docker.png" alt></p>
+<p>We see that it works just fine – the fact that docker-whale builds on the earlier docker/whalesay image is not an issue. The new Docker image is independent of the earlier one. We now run the Ubuntu image and monitor it from the other login terminal. Here the bare <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker ps</code> command shows a running container.</p>
+<p><img src="img_2_4_17_docker_ps.png" alt></p>
+<p>An attempt to remove the container meets with some issues:</p>
+<p><img src="img_2_4_18_docker_attempt_remove.png" alt></p>
+<p>As before, we can force, but we will choose not to. If we want to, we can remove the others. Here I remove practical_snyder using the tag name, and romantic_johnson using a unique prefix of the hash ID:</p>
+<p><img src="img_2_4_19_docker_hash.png" alt>
+I then proceeded to clobber all of the containers other than the one presently running. Following on from this, we can revisit the idea of deleting an image. I don’t want even the modified docker-whale image, and so, this one is my main target:</p>
+<p><img src="img_2_4_20_docker_hash.png" alt></p>
+<p>Note that killing an image will also remove the hashes corresponding to the states encountered in its creation. At this point, we still have a nice running Ubuntu server with Docker installed and an Ubuntu image available. Over the coming week or two we may find ourselves wanting to reuse configurations. Sometimes this is best done at the Docker container level, sometimes at the level of the VM itself. Here we will learn how to preserve a VM.</p>
+<hr>
+<h2 id="exercise-2%3A-preserving-docker-%2F-vm-images" tabindex="-1" style="color: #0066b9;">Exercise 2: Preserving Docker / VM Images</h2>
+<p>If you completed Exercise 1 using AWS VM, then you will be able to see the results of the Image creation/Launching of new EC2 instance. If not, feel free to modify your AWS EC2 so you can see the results of this exercise.</p>
+<h4 id="step-1%3A-create-ami-image" tabindex="-1">Step 1: Create AMI Image</h4>
+<p>Go to the EC2 instance view and use the right click menu on your instance, selecting Image &gt; Create Image
+<img src="img_2_4_21_image_1.png" alt></p>
+<h4 id="step-2%3A-creating-storage" tabindex="-1">Step 2: Creating Storage</h4>
+<p>Once the image is created, we go to the menus on the left hand side and select AMIs under the Images heading. In my case we see two images, one saved from last year. The cost of storing these images is very low but please try to reduce your unnecessary spending: <a href="https://aws.amazon.com/ebs/pricing/Links">https://aws.amazon.com/ebs/pricing/Links</a>.</p>
+<p><img src="img_2_4_22_image_2.png" alt></p>
+<p>Suppose now we want to resurrect this image and use it for later work. In my case, I finished this section earlier this afternoon and have now come home again, and so I can fire up the server. The key in using such a machine – and keeping costs down while doing so – is to not maintain the active storage and to not preserve the IP address. We treat it just like another machine image like those in the menus, with IP and other settings to be added during launch.</p>
+<h4 id="step-3%3A-restoring-the-image" tabindex="-1">Step 3: Restoring the Image</h4>
+<p>At this stage, we select the image and enable the launch button. We click to follow pretty much the standard process. Make sure that you have a suitable custom TCP rule in place in the security settings to allow http access to the machine. Here you should open port 8000. You will need this to verify that the exercises are completed correctly. See the port mapping later in the prac.</p>
+<p><img src="img_2_4_23_restore_image.png" alt></p>
+<p>After launching and following the usual login procedure – note that AWS may use root as the default username in the connect example and you will have to change to ubuntu – we find the image as expected. Here I have changed into the dockerbuild directory and run the docker images command to show that the earlier images are preserved:</p>
+<p><img src="img_2_4_24_image_check.png" alt></p>
+<p>We are now ready to start work on the more sophisticated exercises which make up the rest of this prac. Once again we will build using Dockerfiles rather than using docker compose. Both approaches have their merits, but for now I think that the direct use of the Dockerfile is a better teaching approach. We will now build a Python server – this will be much more sophisticated than the very simple approach you took in the first prac. But it is still well short of a real web server usable in a production environment.</p>
+<hr>
+<h2 id="exercise-3%3A-ubuntu-with-python-server-(hello-world)" tabindex="-1" style="color: #0066b9;">Exercise 3: Ubuntu with Python Server (Hello World)</h2>
+<p>In this exercise you will build a Docker image based on:</p>
+<ul>
+<li>Ubuntu Linux,</li>
+<li>install Python,</li>
+<li>and create a simple Hello World Python app which gets served by a Python Web Server Gateway Interface (WSGI).</li>
+</ul>
+<p>You will be able to view the output in a browser by navigating to the IP address of the underlying Docker machine. You can use <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">https://docs.docker.com/develop/develop-images/dockerfile_best-practices/</a> for Docker conventions and best practices. In particular, this provides really good background on the use of apt-get and the structures to use to avoid caching issues and Dockerfile creation failures. I strongly recommend that you follow the recommended conventions with respect to the lexically ordered, one app per line construction of the apt-get arguments.</p>
+<h4 id="step-1%3A-start-your-image" tabindex="-1">Step 1: Start your image</h4>
+<p>Fire up the AMI you saved in the previous exercise or use your local Linux machine or VM. (We'd use the AWS VM for this exercise)</p>
+<h4 id="step-2%3A-open-docker-terminal-prompt" tabindex="-1">Step 2: Open Docker terminal prompt</h4>
+<p>Return to the Docker terminal command prompt.</p>
+<h4 id="step-3%3A-get-the-list-of-docker-images" tabindex="-1">Step 3: Get the list of docker images</h4>
+<p>Type docker images at the command prompt to view your current list of images.</p>
+<h4 id="step-4%3A-cd-to-your-docker-work-area" tabindex="-1">Step 4: CD to your Docker work area</h4>
+<p>Navigate to your Docker work area and create a directory named exercise3. This directory will contain the Dockerfile which creates the image and the necessary files to run the Python application.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">exercise3
+<span class="hljs-string" style="color: #a5d6ff;">|- DockerFile</span>
+</code></pre>
+<h4 id="step-5%3A-create-directory-structure" tabindex="-1">Step 5: Create directory structure</h4>
+<p>The following directory structure is required. It will sit alongside Dockerfile.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">exercise3
+<span class="hljs-string" style="color: #a5d6ff;">|- DockerFile</span>
+<span class="hljs-string" style="color: #a5d6ff;">|- app</span>
+<span class="hljs-string" style="color: #a5d6ff;">||- app.py</span>
+<span class="hljs-string" style="color: #a5d6ff;">||- server.py</span>
+</code></pre>
+<h4 id="step-6%3A-download-required-files" tabindex="-1">Step 6: Download required files</h4>
+<p>app.py and server.py have been provided in the zip available at the top of this page (DockerPrac.zip). Copy them into the exercise3/app directory. (Quick tip - can probably get away just c/p via vscode)</p>
+<h4 id="step-7%3A-create-dockerfile" tabindex="-1">Step 7: Create Dockerfile</h4>
+<p>Here we will be updating the Dockerfile in the exercise3 directory.</p>
+<p><strong>a:</strong> We are building an Ubuntu image. The FROM command is used for this</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">############################################################
+
+# Dockerfile to build Python WSGI Application Containers
+
+# Based on Ubuntu – by default here the latest version
+
+############################################################
+
+# Set the base image to Ubuntu
+
+FROM ubuntu
+</code></pre>
+<p><strong>b:</strong> The file author should be included as with all software. the LABEL command is used for this (MAINTAINER Command is old and deprecated).</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">LABEL authors<span class="hljs-operator" style="color: #79c0ff;">=</span><span class="hljs-string" style="color: #a5d6ff;">&quot;yu39&quot;</span>
+</code></pre>
+<p><strong>c:</strong> We continue to author our <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">DockerFile</code>. Following the guidelines in the best practices doc, we now create an extensive apt-get task which performs an update to Ubuntu and grabs specific applications, with each of these laid out in alphabetical order to allow easy updates and maintenance. Pip is a package manager for Python. We get it to install the modules needed for this exercise. Please note that there are differences between Ubuntu 18.04 and later versions such as 22.04. The code below has been tested under AWS and WSL for 22.04 (ubuntu latest) but please speak to a tutor if you encounter any difficulties.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Install basic applications, Python, Python tools RUN </span>
+
+RUN apt-get update &amp;&amp; apt-get install -y <span class="hljs-string" style="color: #a5d6ff;">\</span>
+build-essential <span class="hljs-string" style="color: #a5d6ff;">\</span>
+curl <span class="hljs-string" style="color: #a5d6ff;">\</span>
+dialog <span class="hljs-string" style="color: #a5d6ff;">\</span>
+git <span class="hljs-string" style="color: #a5d6ff;">\</span>
+net-tools <span class="hljs-string" style="color: #a5d6ff;">\</span>
+python3 <span class="hljs-string" style="color: #a5d6ff;">\</span>
+python3-dev <span class="hljs-string" style="color: #a5d6ff;">\</span>
+python3-setuptools <span class="hljs-string" style="color: #a5d6ff;">\</span>
+python-distribute <span class="hljs-string" style="color: #a5d6ff;">\</span>
+python3-pip <span class="hljs-string" style="color: #a5d6ff;">\</span>
+tar <span class="hljs-string" style="color: #a5d6ff;">\</span>
+wget
+
+<span class="hljs-comment" style="color: #8b949e;"># Get pip3 to download and install Python requirements:</span>
+
+RUN pip3 install flask
+RUN pip3 install cherrypy
+</code></pre>
+<p><strong>d:</strong> The next commands copy the application folder to make it visible to the server, open access to port 80 for Web access and set the default directory in which the application will execute.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Copy the application folder inside the container</span>
+
+<span class="hljs-keyword" style="color: #ff7b72;">ADD</span><span class="language-bash"> /app /app</span>
+
+<span class="hljs-comment" style="color: #8b949e;"># Expose ports</span>
+
+<span class="hljs-keyword" style="color: #ff7b72;">EXPOSE</span> <span class="hljs-number" style="color: #79c0ff;">80</span>
+
+<span class="hljs-comment" style="color: #8b949e;"># Set the default directory where CMD will execute</span>
+
+<span class="hljs-keyword" style="color: #ff7b72;">WORKDIR</span><span class="language-bash"> /app</span>
+</code></pre>
+<p><strong>e:</strong> Finally the CMD command is used as the entry point for the application and it starts the server</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"># <span class="hljs-keyword" style="color: #ff7b72;">Set</span> the <span class="hljs-keyword" style="color: #ff7b72;">default</span> command <span class="hljs-keyword" style="color: #ff7b72;">to</span> <span class="hljs-keyword" style="color: #ff7b72;">execute</span> <span class="hljs-keyword" style="color: #ff7b72;">when</span> creating a <span class="hljs-built_in" style="color: #ffa657;">new</span> container
+
+# i.e. <span class="hljs-keyword" style="color: #ff7b72;">using</span> CherryPy <span class="hljs-keyword" style="color: #ff7b72;">to</span> serve the application
+
+CMD python3 <span class="hljs-keyword" style="color: #ff7b72;">server</span>.py
+</code></pre>
+<h4 id="step-8%3A-build-image" tabindex="-1">Step 8: Build image</h4>
+<p>Build the Docker image. It will be tagged and referenced as pythonwsgi. This command looks for Dockerfile in the current directory i.e. ‘.’ and builds the image according to the script which was just generated.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker build -t pythonwsgi .
+</code></pre>
+<p>This may take a while – both the update process and the possible interruptions from network timeouts. Just keep executing this command until eventually you get a message that you have completed successfully. The RUN apt-get command is the most troublesome. Docker will create an intermediate container for each of the commands successfully executed and preserve these until the build is completed. The process will skip over completed steps and re-commence at the start of the next task, even if we have attempted it before.</p>
+<p>A reminder too that this screenshot is from an earlier version of the Dockerfile and there may be minor differences in what you see – these are due solely to the changes to the Python packages on the system.</p>
+<p>The screenshot on the next page shows the output I received after the final execution of the command. On this occasion I did not need to try multiple times, though this is no guarantee. As we saw earlier, the individual stages of the process and their associated checksums are your friend here – they can save you a lot of grief.</p>
+<p><img src="img_2_4_25_docker_build.png" alt></p>
+<p>You can ignore the message about the pip command here. We have moved on to another version in any case.</p>
+<p>We can confirm there is our newly created docker image via <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker images</code></p>
+<p><img src="img_2_4_26_image_check.png" alt></p>
+<h4 id="step-9%3A-run-docker-image" tabindex="-1">Step 9: Run Docker Image</h4>
+<p>This command runs the image tagged pythonwsgi in a Docker container which we name exercise3, and sets the correct port for external communications. The command line will wait until you press Ctrl + C to stop the application.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker run <span class="hljs-attr" style="color: #79c0ff;">--name</span> exercise3 –<span class="hljs-selector-tag" style="color: #7ee787;">p</span> <span class="hljs-number" style="color: #79c0ff;">8000</span>:<span class="hljs-number" style="color: #79c0ff;">80</span> –<span class="hljs-selector-tag" style="color: #7ee787;">i</span> –t pythonwsgi
+</code></pre>
+<p>Here we are using the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">–p</code> flag, which maps the machine and container ports:</p>
+<p><code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">-p local-machine-port:docker-container-port</code></p>
+<p>Here we are mapping port 80 of the Docker container (the default for http) to port 8000 on the VM server. If we want to let this application run and continue working at the command line we can add the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">–d</code> flag to daemonise the application:</p>
+<p><code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker run --name exercise3 –p 8000:80 –i –d –t pythonwsgi</code>
+<img src="img_2_4_27_docker_daemon.png" alt></p>
+<p>The daemonised version will return a hash as shown.</p>
+<h4 id="step-10%3A-check-container" tabindex="-1">Step 10: Check Container</h4>
+<p>To confirm that the application is in place and serving pages correctly, you should open a web browser and navigate to the VM IP address. Note that the machine name may tell you the IP address, but if this is from an earlier AMI (as in this case), the approach isn’t reliable. So instead, check properly in the EC2 dashboard as shown. You could also use the full domain name from the connection information.</p>
+<p><img src="img_2_4_28_ec2_ip.png" alt></p>
+<p>In my case, I open a browser at: <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">http://54.252.139.70:8000/</code>. and see Hello World! as expected. Note that this is NOT port 80 as we have on the container. Port mapping works.</p>
+<p><img src="img_2_4_29_ec2_ip_test.png" alt></p>
+<p>You can use <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker rm exercise3</code> if you want to remove the container. This will not remove the image, which you can see with <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">docker images</code>.</p>
+<hr>
+<h2 id="exercise-4%3A-ubuntu-with-python-server-(word-count)" tabindex="-1" style="color: #0066b9;">Exercise 4: Ubuntu with Python Server (Word Count)</h2>
+<p>In this exercise you will:</p>
+<ul>
+<li>build on the Docker image created in Exercise 3,</li>
+<li>install some extra Python libraries,</li>
+<li>and alter the Python app from Exercise 3 to download data from the Natural Language Toolkit (NLTK) data store,</li>
+<li>create a frequency distribution of the words in the data and display the most frequent words in HTML so that each word has a size and colour based on its relative frequency.</li>
+<li>you will be able to view the output in a browser by navigating to the IP address of the Docker machine.</li>
+</ul>
+<p>NLTK is a Python library and relies on the installation of the scipy and numpy packages. An NLTK Cheatsheet with Python code for some common tasks exists at <a href="http://bet.andr.io/code/nltk/cheatsheet/">http://bet.andr.io/code/nltk/cheatsheet/</a></p>
+<h4 id="step-1%3A-configure-work-area" tabindex="-1">Step 1: Configure work area</h4>
+<p>Navigate to your work area and create a new directory named exercise4. Copy the contents of the exercise3 directory into the new directory.</p>
+<h4 id="step-2.-edit-dockerfile." tabindex="-1">Step 2. Edit Dockerfile.</h4>
+<p>The following libraries need to be installed using apt-get python3-numpy and python3-scipy. The NLTK library (nltk) has to be installed using pip3 with a –U flag.</p>
+<h4 id="step-3%3A-update-app.py" tabindex="-1">Step 3: Update app.py</h4>
+<p>The major changes will occur in the app.py file.</p>
+<p><strong>a:</strong> The following imports and downloads are required.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-keyword" style="color: #ff7b72;">import</span> nltk
+
+<span class="hljs-keyword" style="color: #ff7b72;">from</span> nltk <span class="hljs-keyword" style="color: #ff7b72;">import</span> FreqDist
+
+nltk.download(<span class="hljs-string" style="color: #a5d6ff;">&#x27;gutenberg&#x27;</span>)
+
+<span class="hljs-keyword" style="color: #ff7b72;">from</span> nltk.corpus <span class="hljs-keyword" style="color: #ff7b72;">import</span> gutenberg
+</code></pre>
+<p>Project Gutenberg is a collection of books and part of the NLTK data collection.</p>
+<p><strong>b:</strong> We will now create a method named <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">count_words()</code> which will replace <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">hello()</code>. The method will load a book from Project Gutenberg, create a frequency distribution, extract the most common 500 (or some other number) tokens (tokens include punctuation and duplicate words with different case) and generate HTML to display the most common words in different font sizes and colours depending on the word’s relative frequency to the maximum frequency.</p>
+<p><strong>c:</strong> We first load the tokens from Sense and Sensibility, and then create a list of lower case words if they are not punctuation.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">tokens = gutenberg.<span class="hljs-keyword" style="color: #ff7b72;">words</span>(<span class="hljs-string" style="color: #a5d6ff;">&#x27;austen-sense.txt&#x27;</span>)
+tokens = [<span class="hljs-built_in" style="color: #ffa657;">word</span>.<span class="hljs-built_in" style="color: #ffa657;">lower</span>() <span class="hljs-keyword" style="color: #ff7b72;">for</span> <span class="hljs-built_in" style="color: #ffa657;">word</span> <span class="hljs-keyword" style="color: #ff7b72;">in</span> tokens <span class="hljs-keyword" style="color: #ff7b72;">if</span> <span class="hljs-built_in" style="color: #ffa657;">word</span>.isalpha()]
+</code></pre>
+<p><strong>d:</strong> Create a frequency distribution using the extracted tokens. From the frequency distribution extract the most common 500 words.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-attribute" style="color: #79c0ff;">fdist</span> <span class="hljs-operator" style="color: #79c0ff;">=</span> FreqDist(tokens)
+<span class="hljs-attribute" style="color: #79c0ff;">common</span> <span class="hljs-operator" style="color: #79c0ff;">=</span> fdist.most_common(<span class="hljs-number" style="color: #79c0ff;">500</span>)
+</code></pre>
+<p><strong>e:</strong> The most common word data structure is a sequence with each entry being a tuple of the word and its frequency. To be able to create the word output we need to extract the words from the dictionary into a list and sort them.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-keyword" style="color: #ff7b72;">words</span> = []
+
+<span class="hljs-keyword" style="color: #ff7b72;">for</span> <span class="hljs-built_in" style="color: #ffa657;">word</span>, frequency <span class="hljs-keyword" style="color: #ff7b72;">in</span> common:
+  <span class="hljs-keyword" style="color: #ff7b72;">words</span>.append(<span class="hljs-built_in" style="color: #ffa657;">word</span>)
+
+<span class="hljs-keyword" style="color: #ff7b72;">words</span>.<span class="hljs-built_in" style="color: #ffa657;">sort</span>()
+</code></pre>
+<p><strong>f:</strong> We need to get the frequency of the most common word for formatting the font size and colour of the HTML output.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-attribute" style="color: #79c0ff;">highCount</span> <span class="hljs-operator" style="color: #79c0ff;">=</span> common[<span class="hljs-number" style="color: #79c0ff;">0</span>][<span class="hljs-number" style="color: #79c0ff;">1</span>]
+</code></pre>
+<p><strong>g:</strong> Now that we have an alphabetically sorted list of the most common words we can start to build the HTML output. Declare a string variable named html and assign to it an opening html tag followed by a head with title, followed by an opening body tag. An h1 heading can be added as well.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">Exercise left <span class="hljs-keyword" style="color: #ff7b72;">for</span> <span class="hljs-keyword" style="color: #ff7b72;">the</span> reader <span class="hljs-built_in" style="color: #ffa657;">to</span> complete. Check <span class="hljs-keyword" style="color: #ff7b72;">the</span> appendices <span class="hljs-keyword" style="color: #ff7b72;">for</span> <span class="hljs-keyword" style="color: #ff7b72;">a</span> sample solution :D 
+</code></pre>
+<p><strong>h:</strong> <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">For each</code> word in words we can now calculate a size in pixels to display and calculate a hexadecimal colour. The hex function converts an integer to hexadeximal but the result has 0x before the hexadecimal digits. They need to be removed and the hex needs to be padded with leading 0s to a length of 6.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">for word in words:
+  size = <span class="hljs-built_in" style="color: #ffa657;">str</span>(<span class="hljs-built_in" style="color: #ffa657;">int</span>(<span class="hljs-number" style="color: #79c0ff;">15</span> + fdist[word] / <span class="hljs-built_in" style="color: #ffa657;">float</span>(highCount) * <span class="hljs-number" style="color: #79c0ff;">150</span>))
+  colour = <span class="hljs-built_in" style="color: #ffa657;">str</span>(<span class="hljs-built_in" style="color: #ffa657;">hex</span>(<span class="hljs-built_in" style="color: #ffa657;">int</span>(<span class="hljs-number" style="color: #79c0ff;">0.8</span> * fdist[word] / \
+  <span class="hljs-built_in" style="color: #ffa657;">float</span>(highCount) * <span class="hljs-number" style="color: #79c0ff;">256</span>**<span class="hljs-number" style="color: #79c0ff;">3</span>)))
+  colour = colour[<span class="hljs-built_in" style="color: #ffa657;">-</span>(<span class="hljs-built_in" style="color: #ffa657;">len</span>(colour) - <span class="hljs-number" style="color: #79c0ff;">2</span>):]
+  while <span class="hljs-built_in" style="color: #ffa657;">len</span>(colour) &lt; <span class="hljs-number" style="color: #79c0ff;">6</span>:
+      colour = <span class="hljs-string" style="color: #a5d6ff;">&quot;0&quot;</span> + colour
+</code></pre>
+<p><strong>i:</strong> Each word can be added to a HTML span. Each span can be given CSS style for font-size in px and color which must be preceded by a #. An example span element is given below. Follow each span element with a space character so the HTML breaks across the page.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-tag">&lt;<span class="hljs-name" style="color: #7ee787;">span</span> <span class="hljs-attr" style="color: #79c0ff;">style</span>=<span class="hljs-string" style="color: #a5d6ff;">&quot;font-size: 16px; color: #017e22&quot;</span>&gt;</span>comfortable<span class="hljs-tag">&lt;/<span class="hljs-name" style="color: #7ee787;">span</span>&gt;</span>
+</code></pre>
+<p><strong>j:</strong> After the for loop is completed we can add the closing body and html tags to the html variable and return it.</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">Exercise left <span class="hljs-keyword" style="color: #ff7b72;">for</span> <span class="hljs-keyword" style="color: #ff7b72;">the</span> reader <span class="hljs-built_in" style="color: #ffa657;">to</span> complete. Check <span class="hljs-keyword" style="color: #ff7b72;">the</span> appendices <span class="hljs-keyword" style="color: #ff7b72;">for</span> <span class="hljs-keyword" style="color: #ff7b72;">a</span> sample solution :D 
+</code></pre>
+<h4 id="step-4%3A-build-docker-image" tabindex="-1">Step 4: Build Docker Image</h4>
+<p>Build the Docker image wordcount using the same commands as before. After rather a long time, you will see something like the following:</p>
+<p><img src="img_2_4_30_docker_build.png" alt></p>
+<h4 id="step-5%3A-launch-docker-image" tabindex="-1">Step 5: Launch Docker image</h4>
+<p>Launch the Docker image (again modifying the commands you have seen above) in a container called exercise4.Browse the results at the correct IP address, and once again at port 8000, unless you have changed the security settings for the instance (this may not apply for local Linux machines and will depend on your security settings).</p>
+<p><img src="img_2_4_31_web_page.png" alt></p>
+<hr>
+<h2 id="exercise-5%3A-word-count-without-stop-words" tabindex="-1" style="color: #0066b9;">Exercise 5: Word Count Without Stop Words</h2>
+<p>In this exercise you will:</p>
+<ul>
+<li>build on the Docker image created in Exercise 4 by removing the Stop Words from the word list and displaying everything else.</li>
+</ul>
+<p>Just keep the same directory structure – we are just modifying app.py to make it more realistic. Stop Words in natural language processing are the most common words in a language. For English that includes: verbs like is, are, be etc.; articles like a, an and the; pronouns like he, she, they etc.; prepositions like on, in, at etc.; and others. The NLTK has a list of stop words that can be imported.</p>
+<p>Simple guidance on using the stop word lists in NLTK may be found on the web at <a href="https://pythonspot.com/en/nltk-stop-words/">https://pythonspot.com/en/nltk-stop-words/</a>. We steal the same ideas and apply them to the Jane Austen word list.</p>
+<h4 id="step-1%3A-import-stop-words" tabindex="-1">Step 1: Import stop words</h4>
+<p>We first import the stop words – put these below the other imports</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">nltk.download(<span class="hljs-string" style="color: #a5d6ff;">&#x27;stopwords&#x27;</span>)
+<span class="hljs-keyword" style="color: #ff7b72;">from</span> nltk.corpus <span class="hljs-keyword" style="color: #ff7b72;">import</span> stopwords
+</code></pre>
+<h4 id="step-2%3A-create-stopwords" tabindex="-1">Step 2: Create stopwords</h4>
+<p>We then create a set of English stopwords – put this under the function definition</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Define the stopword set</span>
+<span class="hljs-attr" style="color: #79c0ff;">stopWords</span> = set(stopwords.words(<span class="hljs-string" style="color: #a5d6ff;">&#x27;english&#x27;</span>))
+</code></pre>
+<h4 id="step-3%3A-config-filtering" tabindex="-1">Step 3: Config filtering</h4>
+<p>We then add an additional filtering line in the processing of Sense and Sensibility</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-comment" style="color: #8b949e;"># Grab Sense and Sensibility; tokenize; filter stop words;</span>
+<span class="hljs-comment" style="color: #8b949e;"># get frequency distribution</span>
+<span class="hljs-attr" style="color: #79c0ff;">tokens</span> = gutenberg.words(<span class="hljs-string" style="color: #a5d6ff;">&#x27;austen-sense.txt&#x27;</span>)
+<span class="hljs-attr" style="color: #79c0ff;">tokens</span> = [word.lower() for word in tokens if word.isalpha()]
+<span class="hljs-attr" style="color: #79c0ff;">tokens</span> = [word for word in tokens if word not in stopWords]
+<span class="hljs-attr" style="color: #79c0ff;">fdist</span> = FreqDist(tokens)
+</code></pre>
+<p>After rebuilding the Docker image (perhaps you can call it filteredwordcount) we can run it in a container called exercise5. With the usual conventions we will see something like the image on the next page. It is a somewhat better reflection of the style of the writer.</p>
+<h4 id="step-5%3A-push-to-dockerhub" tabindex="-1">Step 5: Push to Dockerhub</h4>
+<p>Finalising – pushing to Docker Hub and pulling to another machine</p>
+<p>Earlier, following the tutorial from Docker, you created your own Docker Hub account. Using the Docker images command (and cleaning a few unwanted images), we have something like:</p>
+<p><img src="img_2_4_32_web_page.png" alt>
+<img src="img_2_4_33_web_page.png" alt></p>
+<p>I have long ago uploaded the images for exercises 3 and 4. I will now upload the most recent filteredwordcount image to Docker Hub. I will begin by associating it with my account. This is handled by the tagging command, which may cover a rename as well. In my case, the command has the form (note the abbreviated ID):</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker <span class="hljs-keyword" style="color: #ff7b72;">tag</span> <span class="hljs-title" style="color: #d2a8ff;">f4d9e</span> jamesmhogan/filteredwordcount:latest
+</code></pre>
+<p>As before, we see the list of images available, with dual entries reflecting the multiple tags.</p>
+<p><img src="img_2_4_34_docker_image.png" alt></p>
+<p>We follow the tutorial and upload our images. Currently, my dashboard on Docker Hub looks like this, showing the two public repos for exercises 3 and 4 above.</p>
+<p><img src="img_2_4_35_docker_hub.png" alt></p>
+<p>After clicking on the blue Create Repository button at top right, we have the following. I have added the appropriate repo name and a basic description. We now click on Create.</p>
+<p><img src="img_2_4_36_docker_repo.png" alt></p>
+<p>The image below shows a docker login and then a successful push to Docker Hub.</p>
+<p><img src="img_2_4_37_docker_push.png" alt></p>
+<p>And here we see the revised version of the dashboard view:</p>
+<p><img src="img_2_4_38_docker_repo.png" alt></p>
+<p>Now, as a final test of everything, fire up a second instance of the basic AMI which we started with. Even those people who have been working on a local Linux machine should do this. The configuration should have a basic Ubuntu LTS 22.04 or later and a current installation of Docker. Your goal is to pull down the latest of your images and run the application that we have just created. After all, this sort of deployment is what Docker is all about. As before, expose a port other than the standard http port 80. In my case, I will again use 8000. We will again map the container port 80 to the server port 8000. At present, I am starting with just two basic images:</p>
+<p><img src="img_2_4_39_new_image.png" alt></p>
+<p>We go ahead and run the image:</p>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;">docker run <span class="hljs-attr" style="color: #79c0ff;">--name</span> exercise4 –<span class="hljs-selector-tag" style="color: #7ee787;">p</span> <span class="hljs-number" style="color: #79c0ff;">8000</span>:<span class="hljs-number" style="color: #79c0ff;">80</span> –<span class="hljs-selector-tag" style="color: #7ee787;">i</span> –d –t jamesmhogan/filteredwordcount
+</code></pre>
+<p><img src="img_2_4_40_new_image.png" alt></p>
+<p>And once again we see the filtered version of the wordcount in the browser:</p>
+<p><img src="img_2_4_41_new_image.png" alt></p>
+<p>That concludes the exercise. Make sure you have a local copy of the python files you have created, and/or create an updated AMI and preserve the machine state. Then go ahead and TERMINATE ALL EC2 INSTANCES as you have previously been instructed to do. As before, do NOT just STOP them. You must ensure that instances are terminated if you wish to avoid charges.</p>
+<hr>
+<h2 id="appendices" tabindex="-1" style="color: #0066b9;">Appendices</h2>
+<h4 id="completed-word-cloud-script" tabindex="-1">Completed word cloud script</h4>
+<pre style="padding: 0.75rem; border: 1px solid gray; border-radius: 0.25rem; background: #0d1117; text-wrap: wrap;"><code class="hljs" style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace; color: #c9d1d9; background: #0d1117;"><span class="hljs-keyword" style="color: #ff7b72;">from</span> flask <span class="hljs-keyword" style="color: #ff7b72;">import</span> Flask
+
+<span class="hljs-keyword" style="color: #ff7b72;">import</span> nltk
+<span class="hljs-keyword" style="color: #ff7b72;">from</span> nltk <span class="hljs-keyword" style="color: #ff7b72;">import</span> FreqDist
+
+nltk.download(<span class="hljs-string" style="color: #a5d6ff;">&#x27;gutenberg&#x27;</span>)
+<span class="hljs-keyword" style="color: #ff7b72;">from</span> nltk.corpus <span class="hljs-keyword" style="color: #ff7b72;">import</span> gutenberg
+
+<span class="hljs-comment" style="color: #8b949e;"># nltk.download(&#x27;stopwords&#x27;)</span>
+<span class="hljs-comment" style="color: #8b949e;"># from nltk.corpus import stopwords</span>
+
+app = Flask(__name__)
+
+<span class="hljs-meta" style="color: #79c0ff;">@app.route(<span class="hljs-params"><span class="hljs-string" style="color: #a5d6ff;">&quot;/&quot;</span></span>)</span>
+<span class="hljs-keyword" style="color: #ff7b72;">def</span> <span class="hljs-title function_" style="color: #d2a8ff;">count_words</span>():
+    tokens = gutenberg.words(<span class="hljs-string" style="color: #a5d6ff;">&#x27;austen-sense.txt&#x27;</span>)
+    tokens = [word.lower() <span class="hljs-keyword" style="color: #ff7b72;">for</span> word <span class="hljs-keyword" style="color: #ff7b72;">in</span> tokens <span class="hljs-keyword" style="color: #ff7b72;">if</span> word.isalpha()]
+    <span class="hljs-comment" style="color: #8b949e;"># tokens = [word for word in tokens if word not in stopWords]</span>
+    fdist = FreqDist(tokens)
+    common = fdist.most_common(<span class="hljs-number" style="color: #79c0ff;">500</span>)
+
+    words = []
+    <span class="hljs-keyword" style="color: #ff7b72;">for</span> word, frequency <span class="hljs-keyword" style="color: #ff7b72;">in</span> common:
+        words.append(word)
+    words.sort()
+
+    highCount = common[<span class="hljs-number" style="color: #79c0ff;">0</span>][<span class="hljs-number" style="color: #79c0ff;">1</span>]
+
+    html = <span class="hljs-string" style="color: #a5d6ff;">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Word Cloud&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Word Cloud&lt;/h1&gt;&quot;</span> ;
+
+    <span class="hljs-keyword" style="color: #ff7b72;">for</span> word <span class="hljs-keyword" style="color: #ff7b72;">in</span> words:
+        size = <span class="hljs-built_in" style="color: #ffa657;">str</span>(<span class="hljs-built_in" style="color: #ffa657;">int</span>(<span class="hljs-number" style="color: #79c0ff;">15</span> + fdist[word] / <span class="hljs-built_in" style="color: #ffa657;">float</span>(highCount) * <span class="hljs-number" style="color: #79c0ff;">150</span>))
+        colour = <span class="hljs-built_in" style="color: #ffa657;">str</span>(<span class="hljs-built_in" style="color: #ffa657;">hex</span>(<span class="hljs-built_in" style="color: #ffa657;">int</span>(<span class="hljs-number" style="color: #79c0ff;">0.8</span> * fdist[word] / \
+                             <span class="hljs-built_in" style="color: #ffa657;">float</span>(highCount) * <span class="hljs-number" style="color: #79c0ff;">256</span>**<span class="hljs-number" style="color: #79c0ff;">3</span>)))
+        colour = colour[-(<span class="hljs-built_in" style="color: #ffa657;">len</span>(colour) - <span class="hljs-number" style="color: #79c0ff;">2</span>):]
+        <span class="hljs-keyword" style="color: #ff7b72;">while</span> <span class="hljs-built_in" style="color: #ffa657;">len</span>(colour) &lt; <span class="hljs-number" style="color: #79c0ff;">6</span>:
+            colour = <span class="hljs-string" style="color: #a5d6ff;">&quot;0&quot;</span> + colour
+        temp = <span class="hljs-string" style="color: #a5d6ff;">&quot;&lt;div style=\&quot;display: inline-block\&quot;&gt;&lt;span style=\&quot;font-size: &quot;</span> + size + <span class="hljs-string" style="color: #a5d6ff;">&quot;px; color: #&quot;</span> + colour + <span class="hljs-string" style="color: #a5d6ff;">&quot;\&quot;&gt;&quot;</span> + word + <span class="hljs-string" style="color: #a5d6ff;">&quot;&lt;/span&gt;&lt;/div&gt;&quot;</span>;
+        html += temp;
+    html +=<span class="hljs-string" style="color: #a5d6ff;">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span>;
+    <span class="hljs-keyword" style="color: #ff7b72;">return</span> html
+
+<span class="hljs-keyword" style="color: #ff7b72;">if</span> __name__ == <span class="hljs-string" style="color: #a5d6ff;">&quot;__main__&quot;</span>:
+    app.run()
+</code></pre>
+<h4 id="further-details%3A-docker-at-home" tabindex="-1">Further Details: Docker at home</h4>
+<p>If you want to run Docker on your home machine running Windows or Mac OS then you should first download the installer at: <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></p>
+<p>The site will detect your OS and select the right version.</p>
+<p>You then need to learn a bit more about Docker on your system. The Docker documentation has a number of sections devoted to other operating systems.</p>
+<ul>
+<li>
+<p>Those working on the Mac should look at: <a href="https://www.docker.com/docker-mac">https://www.docker.com/docker-mac  </a></p>
+</li>
+<li>
+<p>Those working on Windows should start at: <a href="https://docs.docker.com/docker-for-windows/">https://docs.docker.com/docker-for-windows/ </a></p>
+</li>
+</ul>
+<h4 id="further-details%3A-linux-command-line-and-editors" tabindex="-1">Further Details: Linux Command Line and Editors</h4>
+<p>There are many Linux tutorials on the web, and these are of varying quality. This one from Ryan’s Tutorials seems a reasonable start. Others may suit you better. Overall, we'd recommend using VSCode as the standard.</p>
+<ul>
+<li><a href="http://ryanstutorials.net/linuxtutorial/">http://ryanstutorials.net/linuxtutorial/</a></li>
+</ul>
+<p>Commonly people use the editors vi and nano. Some also use emacs. Here are some basic tutorials to get you started.</p>
+<ul>
+<li>
+<p><a href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Editors/ViIntro.html">http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Editors/ViIntro.html</a></p>
+</li>
+<li>
+<p><a href="http://ryanstutorials.net/linuxtutorial/vi.php">http://ryanstutorials.net/linuxtutorial/vi.php</a></p>
+</li>
+<li>
+<p><a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/</a></p>
+</li>
+<li>
+<p><a href="http://www.tuxradar.com/content/emacs-tutorial-beginners">http://www.tuxradar.com/content/emacs-tutorial-beginners</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/emacs/tour/">https://www.gnu.org/software/emacs/tour/</a></p>
+</li>
+</ul>
+<hr>
+<h4 id="what-questions-remain%3F" tabindex="-1">What questions remain?</h4>
+<p>If you have questions about this practical, please post them on the <discussion>Practical 2 questions</discussion> discussion board.</p>

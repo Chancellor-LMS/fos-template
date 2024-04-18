@@ -1,0 +1,90 @@
+<h4 id="section-overview" tabindex="-1">Section Overview</h4>
+<p>This guide will show you how to create an EC2 instance in AWS via the user portal (AWS Console). EC2 instance will be the Virtual Machines (VM's) we will be using throughout the course.</p>
+<p>QUT have followed the AWS well architected framework to configure your workspace so there are a few things we have to work with.</p>
+<h4 id="references" tabindex="-1">References</h4>
+<ul>
+<li><a href="https://aws.amazon.com/ec2/">AWS what is an EC2 (VM) </a></li>
+<li><a href="https://aws.amazon.com/getting-started/launch-a-virtual-machine-B-0/">AWS guide on building an EC2</a></li>
+<li><a href="https://aws.amazon.com/architecture/well-architected/">AWS well architected framework</a></li>
+</ul>
+<h4 id="prerequisites" tabindex="-1">Prerequisites</h4>
+<ul>
+<li><strong>Access to AWS</strong>: Please see previous guide on how to access AWS.</li>
+<li><strong>AWS Console</strong>: You can access the AWS Console to build the EC2 instance from the AWS Management Console. <a href="https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2#">https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2#</a></li>
+</ul>
+<h4 id="how-to-guide" tabindex="-1">How-To Guide</h4>
+<ol>
+<li>Login to AWS. Ensure your AWS Region is set to Sydney (ap-southeast-2). You can do this by clicking on the region in the top right hand corner of the AWS Console. If you are not in the Sydney region, please change to Sydney.</li>
+</ol>
+<p><img src="img_0_3_1_aws_region.png" alt="AWS Region" title="AWS Region"></p>
+<ol start="2">
+<li>On the search bar (Shortcut via Alt + S), type in EC2 and select the EC2 service. Click launch instance.</li>
+</ol>
+<p><img src="img_0_3_2_launch_ec2.png" alt="Launching an EC2" title="Launching an EC2"></p>
+<ol start="3">
+<li>In this page, we will be defining our parameters and configuration for our EC2 instance. Please use the following configurations</li>
+</ol>
+<ul>
+<li><strong>[Name]</strong> You can name your EC2 instance whatever you like. Some common conventions include <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">ec2-RegionCode-EnvironmentCode-ApplicationCode</code>.</li>
+<li><strong>[Name]</strong> We require Tags to be set in your deployment. A tag with key <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">qut-username</code> must be used, matching up with your QUT username.</li>
+</ul>
+<p><img src="img_0_3_3_naming.png" alt="Naming Setup" title="Naming Setup"></p>
+<ul>
+<li><strong>[OS]</strong> We will be using the Ubuntu 22.04 LTS AMI (Amazon Machine Image) for this course. Other images are fine but at your own risk.</li>
+<li><strong>[OS]</strong> 64-bit (x86) Architecture is fine.</li>
+<li><strong>[Spec]</strong> t2.micro for instance type. This defines the spec of your VM.</li>
+</ul>
+<p><img src="img_0_3_4_sample_os.png" alt="OS setup" title="OS setup"></p>
+<ul>
+<li><strong>[Network]</strong> We accept the default for the VPC as this keeps us in the environment created for us.</li>
+<li><strong>[Network]</strong> In this prac we are creating a webserver which needs to connect to the internet so we need to create our VM in any of the public subnets.</li>
+<li><strong>[Network]</strong> Later in the prac we will be enabling a simple HTTP web server on this VM so we will need a public IP created for us. Select enable in the drop down. <strong>The selection defaults to private Subnet. Make sure to change to any of the public subnets</strong>.</li>
+<li><strong>[Network]</strong> On this screen we need to assign some existing security groups click the “select existing security group” radio button &amp; then select the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">CAB432SG</code> <strong>and</strong> the <code style="font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace;">SsmEndpointSG</code>. As you might have guessed from the names one is creating access to our VM from our local computer using AWS systems manager while the other is opening ports to connect via the web browser which we will do later in this prac.</li>
+<li><strong>[Storage]</strong> We will accept the defaults. Block storage of 8gb seems tiny but is more than adequate for this exercise. We do not require a massive data store in many cases, especially if our work is largely about the processing of streaming data or simple content provision. Still, EBS should be seen as a local disk drive rather than as repository, and it will die with the machine later.</li>
+</ul>
+<p><img src="img_0_3_5_network_storage.png" alt="Networking Setup" title="Networking Setup"></p>
+<ul>
+<li><strong>[Additional]</strong> We now must add an IAM role, again you will learn more about IAM later in the semester, for now just know that this IAM role will allow the VM to connect to the AWS systems manager service.</li>
+<li><strong>[Additional]</strong> Lastly we should change the default shutdown behaviour to terminate rather than to stop.  Even in a stopped state VM’s cost money so whenever possible you should get used to terminating (destroying) your VM’s after you’ve finished using it.</li>
+</ul>
+<p><img src="img_0_3_6_additional.png" alt="Additional Setup" title="Additional Setup"></p>
+<p>Finally, we are in a position to review the settings for the instance, which we do, and to push the launch button. This does not in fact launch… there is more than one way to connect to an AWS VM in the QUT cloud service</p>
+<p>If you need to download a key or not is dependent on the option you choose. If this is the first time you have created an AWS VM, create and download a private access key (which you save as a.pemfile). The key can be used in the next step to establish a remote connection to the VM.</p>
+<p><img src="img_0_3_8_pem_key.png" alt="PEM key" title="PEM key"></p>
+<p>The Launch Instances button becomes available, and we are indeed ready to launch. Scroll down on the resulting page and you will see a View Instances button in the bottom right hand corner.</p>
+<ol>
+<li>You’ll probably seem a huge number of VM’s listed on the instances screen. To make it easier to find yours add the tag column into the view.  Click on the cog in the top right hand corner, tick the qut-username box on the left &amp; close.  Now you can look for your username in the second column.</li>
+</ol>
+<p><img src="img_0_3_7_ec2_filter.png" alt="EC2 Filter" title="EC2 Filter"></p>
+<h4 id="further-details%3A-subnets" tabindex="-1">Further Details: Subnets</h4>
+<p>QUT (CAB432) is using the Public subnets in the three availability zones to provide NAT Gateway, Load balancing services in each availability zones.</p>
+<p>A security best practice consideration as outlined in the AWS Well Architected Framework (Apply security at all layers) is to apply a defence in depth approach with multiple security controls. Apply to all layers (for example, edge of network, VPC, public subnets, private subnets, load balancing, security groups, every instance and compute service, operating system, application, and code).</p>
+<p><strong>What is an Public Subnet?</strong></p>
+<p>Subnet: A segment of a VPC’s IP address range that is associated with a route table that can have a direct route to an Internet gateway. This connects the VPC to the Internet and to other AWS services. Things like webservers, where access from users via internet is required will be placed in the public subnet.</p>
+<p>Later in the prac we will be enabling a simple HTTP web server on this VM so we will need a public IP created for us. Select enable in the drop down.</p>
+<p><strong>What is an Private Subnet?</strong></p>
+<p>Subnet: A private subnet is a subnet that is associated with a route table that doesn’t have a route to an internet gateway. Instances in the private subnet are backend servers they don’t accept the traffic from the internet. EC2's, Web apps, Databases, Lambda functions in private subnets, these can't send outbound traffic directly to the Internet, this is only done via a NAT Gateway in the public subnet.</p>
+<p>The following diagram provides an overview between how private and public subnets are used together. The VPC has public subnets and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a load balancer node. The servers run in the private subnets, are launched and terminated by using an Auto Scaling group, and receive traffic from the load balancer. The servers can connect to the internet by using the NAT gateway. The servers can connect to Amazon S3 by using a gateway VPC endpoint.</p>
+<p><img src="img_0_3_9_bastion.png" alt="AWS Networking"></p>
+<p><strong>Bastion Host</strong>
+But what if we want some sort of access from the internet to our private resources? We can deploy bastion hosts to provide temporary and/or limited access to private resources in a virtual private cloud (VPC). Bastion hosts typically sit in public subnets, with hardened security control, and act as a &quot;jump&quot; box.</p>
+<p><img src="img_0_3_10_bastion.png" alt></p>
+<h4 id="further-details%3A-security-group" tabindex="-1">Further Details: Security Group</h4>
+<p>QUT (CAB432) is using the security groups (CAB432SG, SsmEndpointSG) to provide a default list of ports for EC2 instances created in CAB432 and the security group SsmEndpointSG to provide connectivity to the EC2 instance via Systems Manager / Sessions Manager.</p>
+<p><strong>What is a Security Group?</strong></p>
+<p>A security group acts as a virtual firewall for your EC2 instance to control inbound and outbound traffic. When you launch an instance in a VPC, you can assign up to five security groups to the instance. Security groups act at the instance level, not the subnet level. Therefore, each instance in a subnet in your VPC can be assigned to a different set of security groups.</p>
+<p>If you launch an instance, it is automatically assigned to the default security group for the VPC. If you launch an instance using the Amazon EC2 console, you have an option to create a new security group for the instance or utilise a defined security group for the workload.</p>
+<p>For each security group, you add rules that control the inbound traffic to instances, and a separate set of rules that control the outbound traffic.</p>
+<h4 id="further-details%3A-common-errors" tabindex="-1">Further Details: Common Errors</h4>
+<p><strong>Error1</strong>: Cannot find instance post deployment/access.</p>
+<ul>
+<li>Please ensure you have South East Asia (Sydney) selected as your region. If you are still having issues please contact your instructor.</li>
+</ul>
+<p><strong>Error2</strong>: Deployments are failing</p>
+<ul>
+<li>Please ensure you have South East Asia (Sydney) selected as your region. If you are still having issues please contact your instructor.</li>
+<li>Ensure you pick t2 micro instance size. Only certain sizes of VM's are allowed</li>
+<li>Make sure you have tagged your instance. There is a tagging policy enforced throughout our environment meaning: no tag no build <strong>AND</strong> tag must match qut-username – if it doesn’t you won’t be able to terminate or connect to your VM</li>
+<li>Subnet possible issue - You must have chosen one of the private subnets</li>
+<li>IAM role issue - You must choose the IAM role <em>ec2SSMCab432</em></li>
+</ul>

@@ -1,0 +1,916 @@
+{
+    "courseId": "19735",
+    "modules": [
+        {
+            "id": 251014,
+            "position": 1,
+            "name": "Overview",
+            "items": [
+                {
+                    "id": 1631584,
+                    "position": 1,
+                    "title": "Getting started",
+                    "type": "Page",
+                    "pageUrl": "getting-started",
+                    "indent": 0
+                },
+                {
+                    "id": 1631585,
+                    "position": 2,
+                    "title": "Requirements and unit preparations",
+                    "type": "Page",
+                    "pageUrl": "requirements-and-unit-preparations",
+                    "indent": 0
+                },
+                {
+                    "id": 1631586,
+                    "position": 3,
+                    "title": "Contact your teaching team",
+                    "type": "Page",
+                    "pageUrl": "contact-your-teaching-team",
+                    "indent": 0
+                },
+                {
+                    "id": 1631587,
+                    "position": 4,
+                    "title": " Give feedback on your learning experience",
+                    "type": "Page",
+                    "pageUrl": "give-feedback-on-your-learning-experience",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 251015,
+            "position": 2,
+            "name": "About Assessments",
+            "items": [
+                {
+                    "id": 1631588,
+                    "position": 1,
+                    "title": "Assessments overview",
+                    "type": "Page",
+                    "pageUrl": "assessments-overview",
+                    "indent": 0
+                },
+                {
+                    "id": 1631589,
+                    "position": 2,
+                    "title": "UNIT_CODE - Assessment X - Name_of_assessment : Details",
+                    "type": "Page",
+                    "pageUrl": "unit-code-assessment-x-name-of-assessment-details",
+                    "indent": 0
+                },
+                {
+                    "id": 1631590,
+                    "position": 3,
+                    "title": "Assessment Policy - Concessions, extensions and academic integrity",
+                    "type": "Page",
+                    "pageUrl": "assessment-policy-concessions-extensions-and-academic-integrity",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 251016,
+            "position": 3,
+            "name": "Week 1",
+            "items": []
+        },
+        {
+            "id": 251805,
+            "position": 4,
+            "name": "Week 0: Accessing the Cloud",
+            "items": [
+                {
+                    "id": 1637019,
+                    "position": 0,
+                    "title": "0.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "0-dot-1-overview",
+                    "indent": 0,
+                    "chancellorPageId": 1
+                },
+                {
+                    "id": 1637020,
+                    "position": 1,
+                    "title": "0.2 Logging on to QUT AWS Cloud",
+                    "type": "Page",
+                    "pageUrl": "0-dot-2-logging-on-to-qut-aws-cloud",
+                    "indent": 0,
+                    "chancellorPageId": 2
+                },
+                {
+                    "id": 1637021,
+                    "position": 2,
+                    "title": "0.3 Creating an EC2 Instance",
+                    "type": "Page",
+                    "pageUrl": "0-dot-3-creating-an-ec2-instance",
+                    "indent": 0,
+                    "chancellorPageId": 3
+                },
+                {
+                    "id": 1637022,
+                    "position": 3,
+                    "title": "0.4 Connecting to AWS EC2 via SSH",
+                    "type": "Page",
+                    "pageUrl": "0-dot-4-connecting-to-aws-ec2-via-ssh",
+                    "indent": 0,
+                    "chancellorPageId": 4
+                },
+                {
+                    "id": 1637023,
+                    "position": 4,
+                    "title": "0.5 Setting up VS Code for AWS",
+                    "type": "Page",
+                    "pageUrl": "0-dot-5-setting-up-vs-code-for-aws",
+                    "indent": 0,
+                    "chancellorPageId": 5
+                }
+            ],
+            "chancellorModuleId": 1
+        },
+        {
+            "id": 251806,
+            "position": 5,
+            "name": "Week 1: Introduction to Cloud Computing",
+            "items": [
+                {
+                    "id": 1637024,
+                    "position": 0,
+                    "title": "1.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "1-dot-1-overview",
+                    "indent": 0,
+                    "chancellorPageId": 6
+                },
+                {
+                    "id": 1637025,
+                    "position": 1,
+                    "title": "1.2 Lecture",
+                    "type": "Page",
+                    "pageUrl": "1-dot-2-lecture",
+                    "indent": 0,
+                    "chancellorPageId": 7
+                },
+                {
+                    "id": 1637026,
+                    "position": 2,
+                    "title": "1.3 Q&A",
+                    "type": "Page",
+                    "pageUrl": "1-dot-3-q-and-a",
+                    "indent": 0,
+                    "chancellorPageId": 8
+                },
+                {
+                    "id": 1637027,
+                    "position": 3,
+                    "title": "1.4 Practical",
+                    "type": "Page",
+                    "pageUrl": "1-dot-4-practical",
+                    "indent": 0,
+                    "chancellorPageId": 9
+                },
+                {
+                    "id": 1637028,
+                    "position": 4,
+                    "title": "1.5 Summary",
+                    "type": "Page",
+                    "pageUrl": "1-dot-5-summary",
+                    "indent": 0,
+                    "chancellorPageId": 10
+                }
+            ],
+            "chancellorModuleId": 2
+        },
+        {
+            "id": 251807,
+            "position": 6,
+            "name": "Week 2: Docker and Containers",
+            "items": [
+                {
+                    "id": 1637029,
+                    "position": 0,
+                    "title": "2.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "2-dot-1-overview",
+                    "indent": 0,
+                    "chancellorPageId": 11
+                },
+                {
+                    "id": 1637030,
+                    "position": 1,
+                    "title": "2.2 Lecture",
+                    "type": "Page",
+                    "pageUrl": "2-dot-2-lecture",
+                    "indent": 0,
+                    "chancellorPageId": 12
+                },
+                {
+                    "id": 1637031,
+                    "position": 2,
+                    "title": "2.3 Q&A",
+                    "type": "Page",
+                    "pageUrl": "2-dot-3-q-and-a",
+                    "indent": 0,
+                    "chancellorPageId": 13
+                },
+                {
+                    "id": 1637032,
+                    "position": 3,
+                    "title": "2.4 Practical",
+                    "type": "Page",
+                    "pageUrl": "2-dot-4-practical",
+                    "indent": 0,
+                    "chancellorPageId": 14
+                },
+                {
+                    "id": 1637033,
+                    "position": 4,
+                    "title": "2.5 Summary",
+                    "type": "Page",
+                    "pageUrl": "2-dot-5-summary",
+                    "indent": 0,
+                    "chancellorPageId": 15
+                }
+            ],
+            "chancellorModuleId": 3
+        }
+    ],
+    "pages": [
+        {
+            "chancellorPageId": 1,
+            "images": [],
+            "id": 1460474,
+            "url": "0-dot-1-overview",
+            "title": "0.1 Overview",
+            "updatedAt": "2024-04-18T05:16:59.000Z",
+            "files": [
+                {
+                    "source": "module_0\\CAB432Lecture1.3-WhatIsCloud.pdf",
+                    "fileId": 3929130,
+                    "checksum": "518381c40df2390d0a112b3141984824",
+                    "size": 3367702
+                },
+                {
+                    "source": "module_1\\CAB432Lecture1.2-Assessment.pdf",
+                    "fileId": 3930272,
+                    "checksum": "14fd38556f86952329981e2aee1e6964",
+                    "size": 197667
+                }
+            ]
+        },
+        {
+            "chancellorPageId": 6,
+            "images": [],
+            "id": 1460479,
+            "url": "1-dot-1-overview",
+            "title": "1.1 Overview",
+            "updatedAt": "2024-04-18T05:17:01.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 7,
+            "images": [],
+            "id": 1460480,
+            "url": "1-dot-2-lecture",
+            "title": "1.2 Lecture",
+            "updatedAt": "2024-04-18T05:17:01.000Z",
+            "files": [
+                {
+                    "source": "module_1\\CAB432Lecture1.3-WhatIsCloud.pdf",
+                    "fileId": 3929131,
+                    "checksum": "d137757b60e0127aa19eb0f0fc365e70",
+                    "size": 3367702
+                },
+                {
+                    "source": "module_1\\CAB432Lecture1.4-TheMajors.pdf",
+                    "fileId": 3929132,
+                    "checksum": "151485d5a298e97ea385df1a5e0b0266",
+                    "size": 4428836
+                }
+            ]
+        },
+        {
+            "chancellorPageId": 8,
+            "images": [],
+            "id": 1460481,
+            "url": "1-dot-3-q-and-a",
+            "title": "1.3 Q&A",
+            "updatedAt": "2024-04-18T05:17:02.000Z",
+            "files": [
+                {
+                    "source": "module_1\\qna01.pdf",
+                    "fileId": 3929133,
+                    "checksum": "1af6f9be6aa7073bb4630dabdd0dd63f",
+                    "size": 132137
+                }
+            ]
+        },
+        {
+            "chancellorPageId": 10,
+            "images": [],
+            "id": 1460483,
+            "url": "1-dot-5-summary",
+            "title": "1.5 Summary",
+            "updatedAt": "2024-04-18T05:17:02.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 11,
+            "images": [],
+            "id": 1460484,
+            "url": "2-dot-1-overview",
+            "title": "2.1 Overview",
+            "updatedAt": "2024-04-18T05:17:03.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 12,
+            "images": [],
+            "id": 1460485,
+            "url": "2-dot-2-lecture",
+            "title": "2.2 Lecture",
+            "updatedAt": "2024-04-18T05:17:03.000Z",
+            "files": [
+                {
+                    "source": "module_2\\CAB432Lecture2.1-DockerIntro.pdf",
+                    "fileId": 3929135,
+                    "checksum": "059d4bf92c6f7339bcdb60c26a32012f",
+                    "size": 360479
+                },
+                {
+                    "source": "module_2\\CAB432Lecture2.2-Virtualisation.pdf",
+                    "fileId": 3929136,
+                    "checksum": "b5e0b13191ac0248d23410f8feafd6bf",
+                    "size": 551612
+                },
+                {
+                    "source": "module_2\\CAB432Lecture2.3-DockerInDepth.pdf",
+                    "fileId": 3929137,
+                    "checksum": "e7fe3db27464ead7e70ea0aa588fd2c4",
+                    "size": 384359
+                },
+                {
+                    "source": "module_2\\CAB432Lecture2.4-SwarmK8S.pdf",
+                    "fileId": 3929139,
+                    "checksum": "509330dcfd8cf144944fe06e4809a4e1",
+                    "size": 1135951
+                }
+            ]
+        },
+        {
+            "chancellorPageId": 13,
+            "images": [],
+            "id": 1460486,
+            "url": "2-dot-3-q-and-a",
+            "title": "2.3 Q&A",
+            "updatedAt": "2024-04-18T05:17:03.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 15,
+            "images": [],
+            "id": 1460488,
+            "url": "2-dot-5-summary",
+            "title": "2.5 Summary",
+            "updatedAt": "2024-04-18T05:17:04.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 2,
+            "images": [
+                {
+                    "source": "img_0_2_1_qut_login.png",
+                    "checksum": "a8c6f044eec96d31f052b39611d3b309",
+                    "size": 242562,
+                    "fileId": 3928887
+                },
+                {
+                    "source": "img_0_2_2_qut_login_sso.png",
+                    "checksum": "6d9b5eca81279c29ee2260bfdb8181fd",
+                    "size": 1852689,
+                    "fileId": 3928888
+                },
+                {
+                    "source": "img_0_2_3_aws_sso_page.png",
+                    "checksum": "052ecb57591786763580f488f8753082",
+                    "size": 27142,
+                    "fileId": 3928889
+                },
+                {
+                    "source": "img_0_2_4_aws_access.png",
+                    "checksum": "3e16d6b926bafbfd1e7e0fe53505d2aa",
+                    "size": 38036,
+                    "fileId": 3928890
+                },
+                {
+                    "source": "img_0_2_5_aws_console.png",
+                    "checksum": "61581074242ba47013d86fb60d561d58",
+                    "size": 132013,
+                    "fileId": 3928891
+                },
+                {
+                    "source": "img_0_2_6_aws_programmatically.png",
+                    "checksum": "57527446802f63a584ac8a685da7d73f",
+                    "size": 68802,
+                    "fileId": 3928892
+                }
+            ],
+            "id": 1460475,
+            "url": "0-dot-2-logging-on-to-qut-aws-cloud",
+            "title": "0.2 Logging on to QUT AWS Cloud",
+            "updatedAt": "2024-04-18T05:16:59.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 3,
+            "images": [
+                {
+                    "source": "img_0_3_1_aws_region.png",
+                    "checksum": "0e2c6e0a0d2177e47fde9afeeca35149",
+                    "size": 78288,
+                    "fileId": 3928893
+                },
+                {
+                    "source": "img_0_3_2_launch_ec2.png",
+                    "checksum": "7880ff08b498e138d60cf3a201dc5bee",
+                    "size": 135291,
+                    "fileId": 3928894
+                },
+                {
+                    "source": "img_0_3_3_naming.png",
+                    "checksum": "95d6e8424a7cd7c7a972691a4b4dc5a4",
+                    "size": 35593,
+                    "fileId": 3928895
+                },
+                {
+                    "source": "img_0_3_4_sample_os.png",
+                    "checksum": "f3709cac1ac4626873b20a4042d648b1",
+                    "size": 146443,
+                    "fileId": 3928897
+                },
+                {
+                    "source": "img_0_3_5_network_storage.png",
+                    "checksum": "7eeb9d7584f21cf98e586ca1d88a3344",
+                    "size": 121720,
+                    "fileId": 3928898
+                },
+                {
+                    "source": "img_0_3_6_additional.png",
+                    "checksum": "c90e3572e2084dff1bc3d54aa91f9230",
+                    "size": 60952,
+                    "fileId": 3928899
+                },
+                {
+                    "source": "img_0_3_8_pem_key.png",
+                    "checksum": "296488875c609846b87fa731078d0c69",
+                    "size": 209001,
+                    "fileId": 3928900
+                },
+                {
+                    "source": "img_0_3_7_ec2_filter.png",
+                    "checksum": "77751c7b27aa47709ea795546a3ab748",
+                    "size": 66703,
+                    "fileId": 3928901
+                },
+                {
+                    "source": "img_0_3_9_bastion.png",
+                    "checksum": "0c7fb51a1b43b177c8818e5174b13c55",
+                    "size": 36101,
+                    "fileId": 3928902
+                },
+                {
+                    "source": "img_0_3_10_bastion.png",
+                    "checksum": "7868c83d241572b48b72c6e9c48ab0d1",
+                    "size": 51638,
+                    "fileId": 3928903
+                }
+            ],
+            "id": 1460476,
+            "url": "0-dot-3-creating-an-ec2-instance",
+            "title": "0.3 Creating an EC2 Instance",
+            "updatedAt": "2024-04-18T05:17:00.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 4,
+            "images": [
+                {
+                    "source": "img_0_4_1_public_ssh.png",
+                    "checksum": "90d7ff3bf61cb60b38fcf890b959872e",
+                    "size": 20803,
+                    "fileId": 3928904
+                },
+                {
+                    "source": "img_0_4_2_further_details.png",
+                    "checksum": "48dbf36488de62b0339c2f3c7477ab70",
+                    "size": 21822,
+                    "fileId": 3928905
+                }
+            ],
+            "id": 1460477,
+            "url": "0-dot-4-connecting-to-aws-ec2-via-ssh",
+            "title": "0.4 Connecting to AWS EC2 via SSH",
+            "updatedAt": "2024-04-18T05:17:01.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 5,
+            "images": [
+                {
+                    "source": "img_0_5_3_remote_ssh.png",
+                    "checksum": "8b17c0c7d2896c719851980c485ac03f",
+                    "size": 31103,
+                    "fileId": 3928906
+                },
+                {
+                    "source": "img_0_5_4_remote.png",
+                    "checksum": "ca264deaa4ac937735891e431f7360d5",
+                    "size": 10418,
+                    "fileId": 3928907
+                },
+                {
+                    "source": "img_0_5_5_remote.png",
+                    "checksum": "ab9be74e227d8ee9cf395c8cbcac935b",
+                    "size": 24846,
+                    "fileId": 3928908
+                },
+                {
+                    "source": "img_0_5_6_remote.png",
+                    "checksum": "64da5a89456445f1a7760bee08edf9cd",
+                    "size": 12388,
+                    "fileId": 3928909
+                },
+                {
+                    "source": "img_0_5_7_remote.png",
+                    "checksum": "5b3ae5b74df6bc67694293d8e5d4cd6b",
+                    "size": 7522,
+                    "fileId": 3928910
+                },
+                {
+                    "source": "img_0_5_10_remote.png",
+                    "checksum": "99372dd6a936cfce5cc65346f44dc1b0",
+                    "size": 172891,
+                    "fileId": 3928911
+                },
+                {
+                    "source": "img_0_5_7_remote.png",
+                    "checksum": "5b3ae5b74df6bc67694293d8e5d4cd6b",
+                    "size": 7522,
+                    "fileId": 3928910
+                },
+                {
+                    "source": "img_0_5_8_remote.png",
+                    "checksum": "bfff427df4061b92757ae25119b16ba9",
+                    "size": 29620,
+                    "fileId": 3928912
+                },
+                {
+                    "source": "img_0_5_9_remote.png",
+                    "checksum": "bfff427df4061b92757ae25119b16ba9",
+                    "size": 29620,
+                    "fileId": 3928913
+                },
+                {
+                    "source": "img_0_5_11_remote.png",
+                    "checksum": "79b6492c5d31eddb72c7d5864adc1a4d",
+                    "size": 11057,
+                    "fileId": 3928914
+                }
+            ],
+            "id": 1460478,
+            "url": "0-dot-5-setting-up-vs-code-for-aws",
+            "title": "0.5 Setting up VS Code for AWS",
+            "updatedAt": "2024-04-18T05:17:01.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 9,
+            "images": [
+                {
+                    "source": "img_1_4_1_finding_ec2.png",
+                    "checksum": "595fb3f6ef319e0cfd3575e2f610b012",
+                    "size": 34229,
+                    "fileId": 3928915
+                },
+                {
+                    "source": "img_1_4_2_session_manager.png",
+                    "checksum": "7a6782f54d3130d13a0c6789c685112d",
+                    "size": 76597,
+                    "fileId": 3928916
+                },
+                {
+                    "source": "img_1_4_3_ssh_session.png",
+                    "checksum": "dd6221d75ba5b00acb54db8565fe8833",
+                    "size": 30547,
+                    "fileId": 3928917
+                },
+                {
+                    "source": "img_1_4_4_public_ip.png",
+                    "checksum": "e494ab6fdbbbe81c438b1b6970a1f2dd",
+                    "size": 62459,
+                    "fileId": 3928918
+                },
+                {
+                    "source": "img_1_4_5_import_putty.png",
+                    "checksum": "0f55a60fee05aac90b308ea998d9cc1e",
+                    "size": 106677,
+                    "fileId": 3928919
+                },
+                {
+                    "source": "img_1_4_6_putygen.png",
+                    "checksum": "872d974b0366b24dc51930872566b0a1",
+                    "size": 270482,
+                    "fileId": 3928920
+                },
+                {
+                    "source": "img_1_4_7_putty_ip.png",
+                    "checksum": "8db02733501c868d4a258c2f83164755",
+                    "size": 266488,
+                    "fileId": 3928921
+                },
+                {
+                    "source": "img_1_4_8_putty_auth.png",
+                    "checksum": "6f59d6440d3e1c132dc1fa708a2d7470",
+                    "size": 279122,
+                    "fileId": 3928922
+                },
+                {
+                    "source": "img_2_4_1_wsl_setting.png",
+                    "checksum": "621695e51a0fa71e1ea7dc12c97242fc",
+                    "size": 103169,
+                    "fileId": 3928923
+                },
+                {
+                    "source": "img_2_4_2_wsl_extension.png",
+                    "checksum": "6e2c3a4118640edd83dbf28b5d256ae2",
+                    "size": 17048,
+                    "fileId": 3928924
+                },
+                {
+                    "source": "img_2_4_3_wsl_open.png",
+                    "checksum": "0f0fec38c31703bf338afa775aa042e6",
+                    "size": 69010,
+                    "fileId": 3928925
+                },
+                {
+                    "source": "img_2_4_4_wsl_config.png",
+                    "checksum": "045c433e6f2bc1e30da0503ee9074fbe",
+                    "size": 61471,
+                    "fileId": 3928926
+                },
+                {
+                    "source": "img_2_4_5_wsl_vscode.png",
+                    "checksum": "accf56dd51d2f019a779228793dbb107",
+                    "size": 95336,
+                    "fileId": 3928927
+                }
+            ],
+            "id": 1460482,
+            "url": "1-dot-4-practical",
+            "title": "1.4 Practical",
+            "updatedAt": "2024-04-18T05:17:02.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 14,
+            "images": [
+                {
+                    "source": "img_2_4_6_install_docker.png",
+                    "checksum": "2300d51344eaa6ee371b728f2344825d",
+                    "size": 288934,
+                    "fileId": 3928928
+                },
+                {
+                    "source": "img_2_4_7_docker_hello.png",
+                    "checksum": "8706be0a002e808e79014329441c7012",
+                    "size": 66190,
+                    "fileId": 3928929
+                },
+                {
+                    "source": "img_2_4_8_docker_download.png",
+                    "checksum": "e4806adef6604ee35ce69788c21cad65",
+                    "size": 70442,
+                    "fileId": 3928930
+                },
+                {
+                    "source": "img_2_4_8_whalesay.png",
+                    "checksum": "f9101bfe44271e4d354dc00d1b7293bb",
+                    "size": 127593,
+                    "fileId": 3928931
+                },
+                {
+                    "source": "img_2_4_9_whalesay_docker.png",
+                    "checksum": "5a20403eaa0493e437e9941c08b7e41d",
+                    "size": 69877,
+                    "fileId": 3928932
+                },
+                {
+                    "source": "img_2_4_10_docker_build.png",
+                    "checksum": "9bc1965cc11bac5497ab3e4926d6f95a",
+                    "size": 62201,
+                    "fileId": 3928933
+                },
+                {
+                    "source": "img_2_4_11_docker_build.png",
+                    "checksum": "647e1cb11b2dbe37c20ce800a0a07e4a",
+                    "size": 53526,
+                    "fileId": 3928934
+                },
+                {
+                    "source": "img_2_4_12_docker_quote.png",
+                    "checksum": "8dba2754d588dbe97e177dfc3c83f075",
+                    "size": 101253,
+                    "fileId": 3928935
+                },
+                {
+                    "source": "img_2_4_13_docker_help.png",
+                    "checksum": "78585f51470fedaf384aa5ab751068b6",
+                    "size": 91019,
+                    "fileId": 3928936
+                },
+                {
+                    "source": "img_2_4_14_docker_images.png",
+                    "checksum": "6f56f2f8e2642053c06007d6e12a41a1",
+                    "size": 43646,
+                    "fileId": 3928937
+                },
+                {
+                    "source": "img_2_4_15_delete_docker.png",
+                    "checksum": "eba6e574526c57caa5cc82188ea2c70d",
+                    "size": 56162,
+                    "fileId": 3928938
+                },
+                {
+                    "source": "img_2_4_16_rerun_docker.png",
+                    "checksum": "5befe9a16c72f20d1e01c962b76070dc",
+                    "size": 52390,
+                    "fileId": 3928939
+                },
+                {
+                    "source": "img_2_4_17_docker_ps.png",
+                    "checksum": "ef6c3e16f31be332ed28d691e5c6f59f",
+                    "size": 50896,
+                    "fileId": 3928940
+                },
+                {
+                    "source": "img_2_4_18_docker_attempt_remove.png",
+                    "checksum": "aad5fb006c2bbe5d262cee87c78c9300",
+                    "size": 51560,
+                    "fileId": 3928941
+                },
+                {
+                    "source": "img_2_4_19_docker_hash.png",
+                    "checksum": "364bad08a5783be010d7e6a968f1b55f",
+                    "size": 117585,
+                    "fileId": 3928942
+                },
+                {
+                    "source": "img_2_4_20_docker_hash.png",
+                    "checksum": "c454cc924e32d95f6e63e6777a9ca982",
+                    "size": 83606,
+                    "fileId": 3928943
+                },
+                {
+                    "source": "img_2_4_21_image_1.png",
+                    "checksum": "f538be7cf3779d9e67e7782de61ccba9",
+                    "size": 255381,
+                    "fileId": 3928944
+                },
+                {
+                    "source": "img_2_4_22_image_2.png",
+                    "checksum": "4be9af164170198331ced421e51f1c86",
+                    "size": 195878,
+                    "fileId": 3928946
+                },
+                {
+                    "source": "img_2_4_23_restore_image.png",
+                    "checksum": "f8cdaea14c8a54a3c818d7dd322e655d",
+                    "size": 209116,
+                    "fileId": 3928947
+                },
+                {
+                    "source": "img_2_4_24_image_check.png",
+                    "checksum": "31f2a081bc6bc054ad06b8079b643e67",
+                    "size": 49413,
+                    "fileId": 3928948
+                },
+                {
+                    "source": "img_2_4_25_docker_build.png",
+                    "checksum": "7cc1787e1ed608466e1478a22612a824",
+                    "size": 96495,
+                    "fileId": 3928949
+                },
+                {
+                    "source": "img_2_4_26_image_check.png",
+                    "checksum": "ae5566d82f4d7a2ecabca1f57948ada9",
+                    "size": 42717,
+                    "fileId": 3928950
+                },
+                {
+                    "source": "img_2_4_27_docker_daemon.png",
+                    "checksum": "cd74f7e9a1f65862ad35d59a2f39b2ff",
+                    "size": 31250,
+                    "fileId": 3928951
+                },
+                {
+                    "source": "img_2_4_28_ec2_ip.png",
+                    "checksum": "bb80925d7a959ff4f5d16106948108ca",
+                    "size": 200103,
+                    "fileId": 3928952
+                },
+                {
+                    "source": "img_2_4_29_ec2_ip_test.png",
+                    "checksum": "41247a3138633cf5660d55c71b80e190",
+                    "size": 102027,
+                    "fileId": 3928953
+                },
+                {
+                    "source": "img_2_4_30_docker_build.png",
+                    "checksum": "87615223ed5dc2a0d918576e3f0e2ebe",
+                    "size": 83439,
+                    "fileId": 3928954
+                },
+                {
+                    "source": "img_2_4_31_web_page.png",
+                    "checksum": "28c1d5eee24728339dcab2094993d41e",
+                    "size": 352261,
+                    "fileId": 3928955
+                },
+                {
+                    "source": "img_2_4_32_web_page.png",
+                    "checksum": "585ff11261629de3fd5548d7bdedf647",
+                    "size": 36652,
+                    "fileId": 3928956
+                },
+                {
+                    "source": "img_2_4_33_web_page.png",
+                    "checksum": "abb59a7fc8f2b6daa6d1b1b733780814",
+                    "size": 414560,
+                    "fileId": 3928957
+                },
+                {
+                    "source": "img_2_4_34_docker_image.png",
+                    "checksum": "cf9d84e50681574a078eeeb131866465",
+                    "size": 59346,
+                    "fileId": 3928958
+                },
+                {
+                    "source": "img_2_4_35_docker_hub.png",
+                    "checksum": "0d4283375ee0f2502707300abe8a7746",
+                    "size": 151737,
+                    "fileId": 3928959
+                },
+                {
+                    "source": "img_2_4_36_docker_repo.png",
+                    "checksum": "f724231007686039bfa39141f3130519",
+                    "size": 142157,
+                    "fileId": 3928960
+                },
+                {
+                    "source": "img_2_4_37_docker_push.png",
+                    "checksum": "b8ce1993140d299b024780f42035cd7b",
+                    "size": 66010,
+                    "fileId": 3928961
+                },
+                {
+                    "source": "img_2_4_38_docker_repo.png",
+                    "checksum": "781e6305a19678be8d19af4bbcb6450d",
+                    "size": 163588,
+                    "fileId": 3928962
+                },
+                {
+                    "source": "img_2_4_39_new_image.png",
+                    "checksum": "0c498b392cd9600c9a2e6448b8c19a19",
+                    "size": 34437,
+                    "fileId": 3928963
+                },
+                {
+                    "source": "img_2_4_40_new_image.png",
+                    "checksum": "38861fe595ea1cb33df553e70a9e6c15",
+                    "size": 74526,
+                    "fileId": 3928964
+                },
+                {
+                    "source": "img_2_4_41_new_image.png",
+                    "checksum": "f52ce18c22e709edca4c8fec30fed37f",
+                    "size": 384081,
+                    "fileId": 3928966
+                }
+            ],
+            "id": 1460487,
+            "url": "2-dot-4-practical",
+            "title": "2.4 Practical",
+            "updatedAt": "2024-04-18T05:17:04.000Z",
+            "files": [
+                {
+                    "source": "module_2\\DockerPrac.zip",
+                    "fileId": 3929140,
+                    "checksum": "4e86a4acbf32adadb7ee7c2f1b13b3ea",
+                    "size": 8666116
+                }
+            ]
+        }
+    ]
+}
