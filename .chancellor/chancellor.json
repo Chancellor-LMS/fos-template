@@ -1,11 +1,8 @@
 {
-    "name": "Test_CAB432",
+    "name": "fos-template",
     "run": {
         "render": [
             "markdown-to-html"
-        ],
-        "canvas-deploy": [
-            "canvas-upload"
         ]
     },
     "stylesheets": [
@@ -18,74 +15,30 @@
         ".chancellor\\blocks\\details.html",
         ".chancellor\\blocks\\note.html",
         ".chancellor\\blocks\\canvas\\tab-content.html",
-        ".chancellor\\blocks\\canvas\\tabs.html"
+        ".chancellor\\blocks\\canvas\\tabs.html",
+        ".chancellor\\blocks\\canvas\\module-complete.html",
+        ".chancellor\\blocks\\canvas\\topic-title.html"
     ],
     "inlineBlocks": [
-        ".chancellor\\inline-blocks\\pagelink.html",
-        ".chancellor\\inline-blocks\\filelink.html"
+        ".chancellor\\inline-blocks\\filelink.html",
+        ".chancellor\\inline-blocks\\pagelink.html"
     ],
     "workflows": [
         {
             "name": "markdown-to-html",
             "description": "Converts markdown to HTML with inline CSS",
             "processors": [
-                "InlineBlockProcessor",
                 "CommonMarkProcessor",
                 "InlineStyleProcessor"
             ]
-        },
-        {
-            "name": "canvas-upload",
-            "description": "Render .md to .html and upload to Canvas.",
-            "processors": [
-                "InlineBlockProcessor",
-                "CommonMarkProcessor",
-                "InlineStyleProcessor",
-                "FileLinkProcessor",
-                "CanvasDeployProcessor"
-            ]
         }
     ],
-    "modules": [
-        {
-            "id": 1,
-            "name": "Week 0: Accessing the Cloud",
-            "pages": [
-                1,
-                2,
-                3,
-                4,
-                5
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Week 1: Introduction to Cloud Computing",
-            "pages": [
-                6,
-                7,
-                8,
-                9,
-                10
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Week 2: Docker and Containers",
-            "pages": [
-                11,
-                12,
-                13,
-                14,
-                15
-            ]
-        }
-    ],
+    "modules": [],
     "pages": [
         {
             "id": 1,
-            "name": "0_1_overview",
-            "source": "module_0\\0_1_overview.md",
+            "name": "1_welcome",
+            "source": "overview\\1_welcome.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -94,8 +47,8 @@
         },
         {
             "id": 2,
-            "name": "0_2_access_qut_aws_portal",
-            "source": "module_0\\0_2_access_qut_aws_portal.md",
+            "name": "2_contact",
+            "source": "overview\\2_contact.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -104,8 +57,8 @@
         },
         {
             "id": 3,
-            "name": "0_3_EC2_deployment",
-            "source": "module_0\\0_3_EC2_deployment.md",
+            "name": "1_overview",
+            "source": "week_1\\1_overview.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -114,8 +67,8 @@
         },
         {
             "id": 4,
-            "name": "0_4_ssh_connection",
-            "source": "module_0\\0_4_ssh_connection.md",
+            "name": "2_before_class",
+            "source": "week_1\\2_before_class.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -124,8 +77,8 @@
         },
         {
             "id": 5,
-            "name": "0_5_vscode_integration",
-            "source": "module_0\\0_5_vscode_integration.md",
+            "name": "3_in_class",
+            "source": "week_1\\3_in_class.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -134,8 +87,8 @@
         },
         {
             "id": 6,
-            "name": "1_1_overview",
-            "source": "module_1\\1_1_overview.md",
+            "name": "4_solutions",
+            "source": "week_1\\4_solutions.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -144,8 +97,8 @@
         },
         {
             "id": 7,
-            "name": "1_2_lecture",
-            "source": "module_1\\1_2_lecture.md",
+            "name": "5_after_class",
+            "source": "week_1\\5_after_class.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -154,8 +107,8 @@
         },
         {
             "id": 8,
-            "name": "1_3_qna",
-            "source": "module_1\\1_3_qna.md",
+            "name": "6_summary",
+            "source": "week_1\\6_summary.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -164,8 +117,8 @@
         },
         {
             "id": 9,
-            "name": "1_4_practical",
-            "source": "module_1\\1_4_practical.md",
+            "name": "3_communication",
+            "source": "overview\\3_communication.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -174,8 +127,8 @@
         },
         {
             "id": 10,
-            "name": "1_5_summary",
-            "source": "module_1\\1_5_summary.md",
+            "name": "4_learning_opportunities",
+            "source": "overview\\4_learning_opportunities.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -184,8 +137,8 @@
         },
         {
             "id": 11,
-            "name": "2_1_overview",
-            "source": "module_2\\2_1_overview.md",
+            "name": "5_expectations",
+            "source": "overview\\5_expectations.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -194,8 +147,8 @@
         },
         {
             "id": 12,
-            "name": "2_2_lecture",
-            "source": "module_2\\2_2_lecture.md",
+            "name": "6_technical_requirements",
+            "source": "overview\\6_technical_requirements.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -204,8 +157,8 @@
         },
         {
             "id": 13,
-            "name": "2_3_qna",
-            "source": "module_2\\2_3_qna.md",
+            "name": "7_feedback",
+            "source": "overview\\7_feedback.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -214,8 +167,8 @@
         },
         {
             "id": 14,
-            "name": "2_4_practical",
-            "source": "module_2\\2_4_practical.md",
+            "name": "8_safety_belonging",
+            "source": "overview\\8_safety_belonging.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],
@@ -224,8 +177,8 @@
         },
         {
             "id": 15,
-            "name": "2_5_summary",
-            "source": "module_2\\2_5_summary.md",
+            "name": "9_tip_for_success",
+            "source": "overview\\9_tip_for_success.md",
             "overrides": {
                 "workflows": [],
                 "stylesheets": [],

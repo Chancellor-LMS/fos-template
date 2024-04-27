@@ -34,6 +34,15 @@ table {
   width: 100%;
 }
 
+td,
+th {
+  padding: 8px;
+}
+
+td > ul {
+  padding-inline-start: 20px;
+}
+
 h1 {
   background: linear-gradient(to right, #0066b9, #eff6fb);
   color: white;
@@ -45,9 +54,13 @@ h2 {
   color: #0066b9;
 }
 
+h4 {
+  color: #236fa1;
+}
+
 .note {
   background-color: #eff6fb;
-  border: 0.1em solid #9f1cd3;
+  border: 0.1em solid #0066b9;
   border-radius: 0.25em;
   margin: 1.5em 0 0 1em;
   padding: 0.5em 1em 0 1em;
@@ -55,7 +68,7 @@ h2 {
 
 .note > .note-summary {
   position: absolute;
-  background-color: #9f1cd3;
+  background-color: #0066b9;
   color: white;
   margin-top: -1.25em;
   margin-left: -1.5em;
@@ -187,4 +200,39 @@ details > .details-content {
 
 .codefile pre {
   border: transparent;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+
+.separator {
+  max-width: 1200px;
+  border-top: 6px solid #009FE3;
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.toc {
+  border: 1px solid #eee;
+  background-color: #f2faff;
+  border-left: 2px solid #0066b9;
+  border-left-width: 0.25rem;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  padding: 0 1rem;
+}
+
+.toc-header {
+  color: #0066b9;
+  padding: 1rem 1rem 0;
+  margin: 0 -1rem;
+  font-size: 1.5rem;
+}
+
+.flexbox.column {
+  flex-direction: column;
 }

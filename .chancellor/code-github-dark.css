@@ -136,36 +136,3 @@ pre {
 code {
   font: 16px / 19.2px Monaco, Menlo, Consolas, Courier New, monospace
 }
-
-.separator {
-  max-width: 1200px;
-  border-top: 6px solid #0066b9;
-  margin-top: 0.8rem;
-  margin-bottom: 2rem;
-}
-
-.toc {
-  border: 1px solid #eee;
-  background-color: #f2faff;
-  border-left: 2px solid #0066b9;
-  border-left-width: 0.25rem;
-  border-radius: 3px;
-  margin-bottom: 12px;
-  padding: 0 1rem;
-}
-
-.toc-header {
-  color: #0066b9;
-  padding: 1rem 1rem 0;
-  margin: 0 -1rem;
-  font-size: 1.5rem;
-}
-
-.flexbox {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.flexbox-column {
-  flex-direction: column;
-}
