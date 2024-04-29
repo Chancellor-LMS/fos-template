@@ -13,4 +13,4 @@ This module will be a compilation of basic how-to's on accessing the cloud and c
 
 <filelink filename = 'CAB432Lecture1.3-WhatIsCloud.pdf'>CAB432Lecture1.3-WhatIsCloud.pdf</filelink>
 
-:filelink[Example File](../module_1/CAB432Lecture1.2-Assessment.pdf)
+:filelink[Example File](./CAB432Lecture1.3-WhatIsCloud.pdf)
