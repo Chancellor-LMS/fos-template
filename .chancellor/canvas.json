@@ -401,8 +401,17 @@
             "name": "Examples",
             "items": [
                 {
+                    "id": 1647161,
+                    "position": 1,
+                    "title": "Chancellor Basics",
+                    "type": "Page",
+                    "pageUrl": "chancellor-basics",
+                    "indent": 0,
+                    "chancellorPageId": 25
+                },
+                {
                     "id": 1647134,
-                    "position": 0,
+                    "position": 2,
                     "title": "Code with Syntax Highlighting",
                     "type": "Page",
                     "pageUrl": "code-with-syntax-highlighting",
@@ -411,7 +420,7 @@
                 },
                 {
                     "id": 1647135,
-                    "position": 1,
+                    "position": 3,
                     "title": "Table of Content",
                     "type": "Page",
                     "pageUrl": "table-of-content",
@@ -420,7 +429,7 @@
                 },
                 {
                     "id": 1647136,
-                    "position": 2,
+                    "position": 4,
                     "title": "Tables",
                     "type": "Page",
                     "pageUrl": "tables",
@@ -429,21 +438,12 @@
                 },
                 {
                     "id": 1647137,
-                    "position": 3,
+                    "position": 5,
                     "title": "Tabs",
                     "type": "Page",
                     "pageUrl": "tabs",
                     "indent": 0,
                     "chancellorPageId": 24
-                },
-                {
-                    "id": 1647161,
-                    "position": 4,
-                    "title": "Chancellor Basics",
-                    "type": "Page",
-                    "pageUrl": "chancellor-basics",
-                    "indent": 0,
-                    "chancellorPageId": 25
                 }
             ],
             "chancellorModuleId": 3
@@ -497,7 +497,7 @@
             "id": 1470342,
             "url": "contact-your-teaching-team",
             "title": "Contact your teaching team",
-            "updatedAt": "2024-04-28T02:28:33.000Z",
+            "updatedAt": "2024-04-29T14:59:16.000Z",
             "files": []
         },
         {
@@ -596,7 +596,7 @@
             "id": 1470346,
             "url": "technical-requirements",
             "title": "Technical requirements",
-            "updatedAt": "2024-04-28T02:28:34.000Z",
+            "updatedAt": "2024-04-29T14:59:17.000Z",
             "files": [
                 {
                     "source": "overview\\Adobe_Acrobat_Test.pdf",
@@ -719,7 +719,7 @@
             "id": 1470348,
             "url": "safety-and-belonging-in-the-faculty-of-science",
             "title": "Safety and belonging in the Faculty of Science",
-            "updatedAt": "2024-04-28T02:28:35.000Z",
+            "updatedAt": "2024-04-29T14:59:18.000Z",
             "files": []
         },
         {
@@ -741,7 +741,7 @@
             "id": 1470349,
             "url": "tips-for-success",
             "title": "Tips for success",
-            "updatedAt": "2024-04-28T02:28:35.000Z",
+            "updatedAt": "2024-04-29T14:59:18.000Z",
             "files": []
         },
         {
@@ -750,7 +750,7 @@
             "id": 1470350,
             "url": "1-dot-1-overview-15",
             "title": "1.1 Overview",
-            "updatedAt": "2024-04-28T02:28:35.000Z",
+            "updatedAt": "2024-04-29T14:59:18.000Z",
             "files": []
         },
         {
@@ -759,7 +759,7 @@
             "id": 1470351,
             "url": "1-dot-2-preparation-for-class",
             "title": "1.2 Preparation for class",
-            "updatedAt": "2024-04-28T02:28:36.000Z",
+            "updatedAt": "2024-04-29T14:59:19.000Z",
             "files": []
         },
         {
@@ -786,7 +786,7 @@
             "id": 1470354,
             "url": "1-dot-5-after-the-workshop-slash-tutorial-slash-laboratory-slash-prac",
             "title": "1.5 After the workshop/tutorial/laboratory/prac",
-            "updatedAt": "2024-04-28T02:28:37.000Z",
+            "updatedAt": "2024-04-29T14:59:19.000Z",
             "files": []
         },
         {
@@ -811,7 +811,7 @@
             "id": 1470356,
             "url": "0-dot-1-overview-30",
             "title": "0.1 Overview",
-            "updatedAt": "2024-04-28T02:28:37.000Z",
+            "updatedAt": "2024-04-29T14:59:20.000Z",
             "files": [
                 {
                     "source": "week_2\\CAB432Lecture1.3-WhatIsCloud.pdf",
@@ -864,7 +864,7 @@
             "id": 1470357,
             "url": "0-dot-2-logging-on-to-qut-aws-cloud-38",
             "title": "0.2 Logging on to QUT AWS Cloud",
-            "updatedAt": "2024-04-28T02:28:37.000Z",
+            "updatedAt": "2024-04-29T14:59:20.000Z",
             "files": []
         },
         {
@@ -934,7 +934,7 @@
             "id": 1470358,
             "url": "0-dot-3-creating-an-ec2-instance-34",
             "title": "0.3 Creating an EC2 Instance",
-            "updatedAt": "2024-04-28T02:28:38.000Z",
+            "updatedAt": "2024-04-29T14:59:20.000Z",
             "files": []
         },
         {
@@ -956,7 +956,7 @@
             "id": 1470359,
             "url": "0-dot-4-connecting-to-aws-ec2-via-ssh-37",
             "title": "0.4 Connecting to AWS EC2 via SSH",
-            "updatedAt": "2024-04-28T02:28:39.000Z",
+            "updatedAt": "2024-04-29T14:59:21.000Z",
             "files": []
         },
         {
@@ -1026,7 +1026,7 @@
             "id": 1470360,
             "url": "0-dot-5-setting-up-vs-code-for-aws-39",
             "title": "0.5 Setting up VS Code for AWS",
-            "updatedAt": "2024-04-28T02:28:39.000Z",
+            "updatedAt": "2024-04-29T14:59:22.000Z",
             "files": []
         },
         {
@@ -1035,7 +1035,7 @@
             "id": 1470361,
             "url": "code-with-syntax-highlighting",
             "title": "Code with Syntax Highlighting",
-            "updatedAt": "2024-04-27T14:02:34.000Z",
+            "updatedAt": "2024-04-29T14:59:22.000Z",
             "files": []
         },
         {
@@ -1044,7 +1044,7 @@
             "id": 1470362,
             "url": "table-of-content",
             "title": "Table of Content",
-            "updatedAt": "2024-04-27T14:02:35.000Z",
+            "updatedAt": "2024-04-29T14:59:22.000Z",
             "files": []
         },
         {
@@ -1053,7 +1053,7 @@
             "id": 1470363,
             "url": "tables",
             "title": "Tables",
-            "updatedAt": "2024-04-28T02:28:40.000Z",
+            "updatedAt": "2024-04-29T14:59:23.000Z",
             "files": []
         },
         {
@@ -1062,7 +1062,7 @@
             "id": 1470364,
             "url": "tabs",
             "title": "Tabs",
-            "updatedAt": "2024-04-28T02:28:40.000Z",
+            "updatedAt": "2024-04-29T14:59:23.000Z",
             "files": []
         },
         {
@@ -1086,7 +1086,7 @@
             "id": 1470383,
             "url": "chancellor-basics",
             "title": "Chancellor Basics",
-            "updatedAt": "2024-04-28T02:45:04.000Z"
+            "updatedAt": "2024-04-29T14:59:23.000Z"
         }
     ]
 }
