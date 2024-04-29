@@ -1,189 +1,345 @@
 {
-    "name": "fos-template",
-    "run": {
-        "render": [
-            "markdown-to-html"
-        ]
-    },
-    "stylesheets": [
-        ".chancellor\\code-github-dark.css",
-        ".chancellor\\styles.css"
+  "name": "fos-template",
+  "run": {
+    "render": [
+      "markdown-to-html"
     ],
-    "blocks": [
-        ".chancellor\\blocks\\box.html",
-        ".chancellor\\blocks\\codefile.html",
-        ".chancellor\\blocks\\details.html",
-        ".chancellor\\blocks\\note.html",
-        ".chancellor\\blocks\\canvas\\tab-content.html",
-        ".chancellor\\blocks\\canvas\\tabs.html",
-        ".chancellor\\blocks\\canvas\\module-complete.html",
-        ".chancellor\\blocks\\canvas\\topic-title.html"
-    ],
-    "inlineBlocks": [
-        ".chancellor\\inline-blocks\\filelink.html",
-        ".chancellor\\inline-blocks\\pagelink.html"
-    ],
-    "workflows": [
-        {
-            "name": "markdown-to-html",
-            "description": "Converts markdown to HTML with inline CSS",
-            "processors": [
-                "CommonMarkProcessor",
-                "InlineStyleProcessor"
-            ]
-        }
-    ],
-    "modules": [],
-    "pages": [
-        {
-            "id": 1,
-            "name": "1_welcome",
-            "source": "overview\\1_welcome.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 2,
-            "name": "2_contact",
-            "source": "overview\\2_contact.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 3,
-            "name": "1_overview",
-            "source": "week_1\\1_overview.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 4,
-            "name": "2_before_class",
-            "source": "week_1\\2_before_class.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 5,
-            "name": "3_in_class",
-            "source": "week_1\\3_in_class.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 6,
-            "name": "4_solutions",
-            "source": "week_1\\4_solutions.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 7,
-            "name": "5_after_class",
-            "source": "week_1\\5_after_class.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 8,
-            "name": "6_summary",
-            "source": "week_1\\6_summary.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 9,
-            "name": "3_communication",
-            "source": "overview\\3_communication.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 10,
-            "name": "4_learning_opportunities",
-            "source": "overview\\4_learning_opportunities.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 11,
-            "name": "5_expectations",
-            "source": "overview\\5_expectations.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 12,
-            "name": "6_technical_requirements",
-            "source": "overview\\6_technical_requirements.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 13,
-            "name": "7_feedback",
-            "source": "overview\\7_feedback.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 14,
-            "name": "8_safety_belonging",
-            "source": "overview\\8_safety_belonging.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        },
-        {
-            "id": 15,
-            "name": "9_tip_for_success",
-            "source": "overview\\9_tip_for_success.md",
-            "overrides": {
-                "workflows": [],
-                "stylesheets": [],
-                "blocks": []
-            }
-        }
+    "canvas-deploy": [
+      "canvas-upload"
     ]
+  },
+  "stylesheets": [
+    ".chancellor\\code-github-dark.css",
+    ".chancellor\\styles.css"
+  ],
+  "blocks": [
+    ".chancellor\\blocks\\box.html",
+    ".chancellor\\blocks\\codefile.html",
+    ".chancellor\\blocks\\details.html",
+    ".chancellor\\blocks\\note.html",
+    ".chancellor\\blocks\\canvas\\tab-content.html",
+    ".chancellor\\blocks\\canvas\\tabs.html",
+    ".chancellor\\blocks\\canvas\\module-complete.html",
+    ".chancellor\\blocks\\canvas\\topic-title.html"
+  ],
+  "inlineBlocks": [
+    ".chancellor\\inline-blocks\\filelink.html",
+    ".chancellor\\inline-blocks\\pagelink.html"
+  ],
+  "workflows": [
+    {
+      "name": "markdown-to-html",
+      "description": "Converts markdown to HTML with inline CSS",
+      "processors": [
+        "InlineBlockProcessor",
+        "CommonMarkProcessor",
+        "InlineStyleProcessor"
+      ]
+    },
+    {
+      "name": "canvas-upload",
+      "description": "Render .md to .html and upload to Canvas.",
+      "processors": [
+        "InlineBlockProcessor",
+        "CommonMarkProcessor",
+        "InlineStyleProcessor",
+        "ImageResolveProcessor",
+        "FileLinkProcessor",
+        "PageLinkProcessor",
+        "CanvasDeployProcessor"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "name": "Overview",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Week 1",
+      "pages": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Examples",
+      "pages": [
+        25,
+        21,
+        22,
+        23,
+        24
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": 1,
+      "name": "1_welcome",
+      "source": "overview\\1_welcome.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 2,
+      "name": "2_contact",
+      "source": "overview\\2_contact.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 3,
+      "name": "3_communication",
+      "source": "overview\\3_communication.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 4,
+      "name": "4_learning_opportunities",
+      "source": "overview\\4_learning_opportunities.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 5,
+      "name": "5_expectations",
+      "source": "overview\\5_expectations.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 6,
+      "name": "6_technical_requirements",
+      "source": "overview\\6_technical_requirements.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 7,
+      "name": "7_feedback",
+      "source": "overview\\7_feedback.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 8,
+      "name": "8_safety_belonging",
+      "source": "overview\\8_safety_belonging.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 9,
+      "name": "9_tip_for_success",
+      "source": "overview\\9_tip_for_success.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 10,
+      "name": "1_overview",
+      "source": "week_1\\1_overview.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 11,
+      "name": "2_before_class",
+      "source": "week_1\\2_before_class.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 12,
+      "name": "3_in_class",
+      "source": "week_1\\3_in_class.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 13,
+      "name": "4_solutions",
+      "source": "week_1\\4_solutions.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 14,
+      "name": "5_after_class",
+      "source": "week_1\\5_after_class.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 15,
+      "name": "6_summary",
+      "source": "week_1\\6_summary.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 16,
+      "name": "0_1_overview",
+      "source": "week_2\\0_1_overview.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 17,
+      "name": "0_2_access_qut_aws_portal",
+      "source": "week_2\\0_2_access_qut_aws_portal.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 18,
+      "name": "0_3_EC2_deployment",
+      "source": "week_2\\0_3_EC2_deployment.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 19,
+      "name": "0_4_ssh_connection",
+      "source": "week_2\\0_4_ssh_connection.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 20,
+      "name": "0_5_vscode_integration",
+      "source": "week_2\\0_5_vscode_integration.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 21,
+      "name": "Code",
+      "source": "examples\\Code.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 22,
+      "name": "Table of Content",
+      "source": "examples\\Table of Content.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 23,
+      "name": "Tables",
+      "source": "examples\\Tables.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 24,
+      "name": "Tabs",
+      "source": "examples\\Tabs.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    },
+    {
+      "id": 25,
+      "name": "Basics",
+      "source": "examples\\Basics.md",
+      "overrides": {
+        "workflows": [],
+        "stylesheets": [],
+        "blocks": []
+      }
+    }
+  ]
 }

@@ -1,0 +1,1092 @@
+{
+    "courseId": "909",
+    "modules": [
+        {
+            "id": 222564,
+            "position": 1,
+            "name": "About Assessment",
+            "items": [
+                {
+                    "id": 1456313,
+                    "position": 0,
+                    "title": "Assessment Overview",
+                    "type": "Page",
+                    "pageUrl": "assessment-overview",
+                    "indent": 0
+                },
+                {
+                    "id": 1456314,
+                    "position": 1,
+                    "title": "Assessment Policy - Concessions, extensions and academic integrity",
+                    "type": "Page",
+                    "pageUrl": "assessment-policy-concessions-extensions-and-academic-integrity",
+                    "indent": 0
+                },
+                {
+                    "id": 1456315,
+                    "position": 2,
+                    "title": "The first thing",
+                    "type": "Page",
+                    "pageUrl": "the-first-thing",
+                    "indent": 0
+                },
+                {
+                    "id": 1456316,
+                    "position": 3,
+                    "title": "The second thing",
+                    "type": "Page",
+                    "pageUrl": "the-second-thing",
+                    "indent": 0
+                },
+                {
+                    "id": 1456317,
+                    "position": 4,
+                    "title": "The third thing",
+                    "type": "Page",
+                    "pageUrl": "the-third-thing",
+                    "indent": 0
+                },
+                {
+                    "id": 1636553,
+                    "position": 5,
+                    "title": "The Video Thing",
+                    "type": "Page",
+                    "pageUrl": "the-video-thing",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 251758,
+            "position": 2,
+            "name": "Week 1: This is where the title should be if I could come up with one ",
+            "items": [
+                {
+                    "id": 1636827,
+                    "position": 0,
+                    "title": "1.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "1-dot-1-overview",
+                    "indent": 0
+                },
+                {
+                    "id": 1636828,
+                    "position": 1,
+                    "title": "1.2 Lecture",
+                    "type": "Page",
+                    "pageUrl": "1-dot-2-lecture",
+                    "indent": 0
+                },
+                {
+                    "id": 1636829,
+                    "position": 2,
+                    "title": "1.3 Q&A",
+                    "type": "Page",
+                    "pageUrl": "1-dot-3-q-and-a",
+                    "indent": 0
+                },
+                {
+                    "id": 1636830,
+                    "position": 3,
+                    "title": "1.4 Tutorial",
+                    "type": "Page",
+                    "pageUrl": "1-dot-4-tutorial",
+                    "indent": 0
+                },
+                {
+                    "id": 1636831,
+                    "position": 4,
+                    "title": "1.5 Summary",
+                    "type": "Page",
+                    "pageUrl": "1-dot-5-summary",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 251776,
+            "position": 3,
+            "name": "Week 0: Accessing the Cloud",
+            "items": [
+                {
+                    "id": 1636921,
+                    "position": 0,
+                    "title": "0.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "0-dot-1-overview-29",
+                    "indent": 0
+                },
+                {
+                    "id": 1636922,
+                    "position": 1,
+                    "title": "0.2 Logging on to QUT AWS Cloud",
+                    "type": "Page",
+                    "pageUrl": "0-dot-2-logging-on-to-qut-aws-cloud-37",
+                    "indent": 0
+                },
+                {
+                    "id": 1636923,
+                    "position": 2,
+                    "title": "0.3 Creating an EC2 Instance",
+                    "type": "Page",
+                    "pageUrl": "0-dot-3-creating-an-ec2-instance-33",
+                    "indent": 0
+                },
+                {
+                    "id": 1636924,
+                    "position": 3,
+                    "title": "0.4 Connecting to AWS EC2 via SSH",
+                    "type": "Page",
+                    "pageUrl": "0-dot-4-connecting-to-aws-ec2-via-ssh-36",
+                    "indent": 0
+                },
+                {
+                    "id": 1636925,
+                    "position": 4,
+                    "title": "0.5 Setting up VS Code for AWS",
+                    "type": "Page",
+                    "pageUrl": "0-dot-5-setting-up-vs-code-for-aws-38",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 251777,
+            "position": 4,
+            "name": "Week 1: Introduction to Cloud Computing",
+            "items": [
+                {
+                    "id": 1636926,
+                    "position": 0,
+                    "title": "1.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "1-dot-1-overview-14",
+                    "indent": 0
+                },
+                {
+                    "id": 1636927,
+                    "position": 1,
+                    "title": "1.2 Lecture",
+                    "type": "Page",
+                    "pageUrl": "1-dot-2-lecture-14",
+                    "indent": 0
+                },
+                {
+                    "id": 1636928,
+                    "position": 2,
+                    "title": "1.3 Q&A",
+                    "type": "Page",
+                    "pageUrl": "1-dot-3-q-and-a-14",
+                    "indent": 0
+                },
+                {
+                    "id": 1636929,
+                    "position": 3,
+                    "title": "1.4 Practical",
+                    "type": "Page",
+                    "pageUrl": "1-dot-4-practical-14",
+                    "indent": 0
+                },
+                {
+                    "id": 1636930,
+                    "position": 4,
+                    "title": "1.5 Summary",
+                    "type": "Page",
+                    "pageUrl": "1-dot-5-summary-14",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 251778,
+            "position": 5,
+            "name": "Week 2: Docker and Containers",
+            "items": [
+                {
+                    "id": 1636931,
+                    "position": 0,
+                    "title": "2.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "2-dot-1-overview-13",
+                    "indent": 0
+                },
+                {
+                    "id": 1636932,
+                    "position": 1,
+                    "title": "2.2 Lecture",
+                    "type": "Page",
+                    "pageUrl": "2-dot-2-lecture-13",
+                    "indent": 0
+                },
+                {
+                    "id": 1636933,
+                    "position": 2,
+                    "title": "2.3 Q&A",
+                    "type": "Page",
+                    "pageUrl": "2-dot-3-q-and-a-12",
+                    "indent": 0
+                },
+                {
+                    "id": 1636934,
+                    "position": 3,
+                    "title": "2.4 Practical",
+                    "type": "Page",
+                    "pageUrl": "2-dot-4-practical-7",
+                    "indent": 0
+                },
+                {
+                    "id": 1636935,
+                    "position": 4,
+                    "title": "2.5 Summary",
+                    "type": "Page",
+                    "pageUrl": "2-dot-5-summary-7",
+                    "indent": 0
+                }
+            ]
+        },
+        {
+            "id": 252996,
+            "position": 6,
+            "name": "Overview",
+            "items": [
+                {
+                    "id": 1647119,
+                    "position": 0,
+                    "title": "Welcome",
+                    "type": "Page",
+                    "pageUrl": "welcome",
+                    "indent": 0,
+                    "chancellorPageId": 1
+                },
+                {
+                    "id": 1647120,
+                    "position": 1,
+                    "title": "Contact your teaching team",
+                    "type": "Page",
+                    "pageUrl": "contact-your-teaching-team",
+                    "indent": 0,
+                    "chancellorPageId": 2
+                },
+                {
+                    "id": 1647121,
+                    "position": 2,
+                    "title": "Communication with peers and staff",
+                    "type": "Page",
+                    "pageUrl": "communication-with-peers-and-staff",
+                    "indent": 0,
+                    "chancellorPageId": 3
+                },
+                {
+                    "id": 1647122,
+                    "position": 3,
+                    "title": "Your learning opportunities",
+                    "type": "Page",
+                    "pageUrl": "your-learning-opportunities",
+                    "indent": 0,
+                    "chancellorPageId": 4
+                },
+                {
+                    "id": 1647123,
+                    "position": 4,
+                    "title": "Expectations",
+                    "type": "Page",
+                    "pageUrl": "expectations",
+                    "indent": 0,
+                    "chancellorPageId": 5
+                },
+                {
+                    "id": 1647124,
+                    "position": 5,
+                    "title": "Technical requirements",
+                    "type": "Page",
+                    "pageUrl": "technical-requirements",
+                    "indent": 0,
+                    "chancellorPageId": 6
+                },
+                {
+                    "id": 1647125,
+                    "position": 6,
+                    "title": "Give feedback on your learning experience",
+                    "type": "Page",
+                    "pageUrl": "give-feedback-on-your-learning-experience",
+                    "indent": 0,
+                    "chancellorPageId": 7
+                },
+                {
+                    "id": 1647126,
+                    "position": 7,
+                    "title": "Safety and belonging in the Faculty of Science",
+                    "type": "Page",
+                    "pageUrl": "safety-and-belonging-in-the-faculty-of-science",
+                    "indent": 0,
+                    "chancellorPageId": 8
+                },
+                {
+                    "id": 1647127,
+                    "position": 8,
+                    "title": "Tips for success",
+                    "type": "Page",
+                    "pageUrl": "tips-for-success",
+                    "indent": 0,
+                    "chancellorPageId": 9
+                }
+            ],
+            "chancellorModuleId": 1
+        },
+        {
+            "id": 252997,
+            "position": 7,
+            "name": "Week 1",
+            "items": [
+                {
+                    "id": 1647128,
+                    "position": 0,
+                    "title": "1.1 Overview",
+                    "type": "Page",
+                    "pageUrl": "1-dot-1-overview-15",
+                    "indent": 0,
+                    "chancellorPageId": 10
+                },
+                {
+                    "id": 1647129,
+                    "position": 1,
+                    "title": "1.2 Preparation for class",
+                    "type": "Page",
+                    "pageUrl": "1-dot-2-preparation-for-class",
+                    "indent": 0,
+                    "chancellorPageId": 11
+                },
+                {
+                    "id": 1647130,
+                    "position": 2,
+                    "title": "1.3 Workshop/Tutorial/Prac/Lab",
+                    "type": "Page",
+                    "pageUrl": "1-dot-3-workshop-slash-tutorial-slash-prac-slash-lab",
+                    "indent": 0,
+                    "chancellorPageId": 12
+                },
+                {
+                    "id": 1647131,
+                    "position": 3,
+                    "title": "1.4 Workshop/Tutorial/Prac/Lab Solutions",
+                    "type": "Page",
+                    "pageUrl": "1-dot-4-workshop-slash-tutorial-slash-prac-slash-lab-solutions",
+                    "indent": 0,
+                    "chancellorPageId": 13
+                },
+                {
+                    "id": 1647132,
+                    "position": 4,
+                    "title": "1.5 After the workshop/tutorial/laboratory/prac",
+                    "type": "Page",
+                    "pageUrl": "1-dot-5-after-the-workshop-slash-tutorial-slash-laboratory-slash-prac",
+                    "indent": 0,
+                    "chancellorPageId": 14
+                },
+                {
+                    "id": 1647133,
+                    "position": 5,
+                    "title": "1.6 Summary",
+                    "type": "Page",
+                    "pageUrl": "1-dot-6-summary",
+                    "indent": 0,
+                    "chancellorPageId": 15
+                }
+            ],
+            "chancellorModuleId": 2
+        },
+        {
+            "id": 252998,
+            "position": 8,
+            "name": "Examples",
+            "items": [
+                {
+                    "id": 1647134,
+                    "position": 0,
+                    "title": "Code with Syntax Highlighting",
+                    "type": "Page",
+                    "pageUrl": "code-with-syntax-highlighting",
+                    "indent": 0,
+                    "chancellorPageId": 21
+                },
+                {
+                    "id": 1647135,
+                    "position": 1,
+                    "title": "Table of Content",
+                    "type": "Page",
+                    "pageUrl": "table-of-content",
+                    "indent": 0,
+                    "chancellorPageId": 22
+                },
+                {
+                    "id": 1647136,
+                    "position": 2,
+                    "title": "Tables",
+                    "type": "Page",
+                    "pageUrl": "tables",
+                    "indent": 0,
+                    "chancellorPageId": 23
+                },
+                {
+                    "id": 1647137,
+                    "position": 3,
+                    "title": "Tabs",
+                    "type": "Page",
+                    "pageUrl": "tabs",
+                    "indent": 0,
+                    "chancellorPageId": 24
+                },
+                {
+                    "id": 1647161,
+                    "position": 4,
+                    "title": "Chancellor Basics",
+                    "type": "Page",
+                    "pageUrl": "chancellor-basics",
+                    "indent": 0,
+                    "chancellorPageId": 25
+                }
+            ],
+            "chancellorModuleId": 3
+        }
+    ],
+    "pages": [
+        {
+            "chancellorPageId": 1,
+            "images": [
+                {
+                    "source": "./images/welcome_page.png",
+                    "checksum": "3c9589dddbf6b48bd45d987639cff71b",
+                    "size": 719016,
+                    "fileId": 4001566
+                }
+            ],
+            "id": 1470341,
+            "url": "welcome",
+            "title": "Welcome",
+            "updatedAt": "2024-04-27T14:01:51.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 2,
+            "images": [
+                {
+                    "source": "./images/avatar.png",
+                    "checksum": "e00df4393900f64276e764bf475a7d28",
+                    "size": 3214,
+                    "fileId": 4001567
+                },
+                {
+                    "source": "./images/avatar.png",
+                    "checksum": "e00df4393900f64276e764bf475a7d28",
+                    "size": 3214,
+                    "fileId": 4001567
+                },
+                {
+                    "source": "./images/avatar.png",
+                    "checksum": "e00df4393900f64276e764bf475a7d28",
+                    "size": 3214,
+                    "fileId": 4001567
+                },
+                {
+                    "source": "./images/hiq.png",
+                    "checksum": "3f4f858b1ada04236d892ad3025b8672",
+                    "size": 3495,
+                    "fileId": 4001568
+                }
+            ],
+            "id": 1470342,
+            "url": "contact-your-teaching-team",
+            "title": "Contact your teaching team",
+            "updatedAt": "2024-04-28T02:28:33.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 3,
+            "images": [
+                {
+                    "source": "./images/canvas-3.png",
+                    "checksum": "7aea0e7bd606a275bb39aabf7809ebd2",
+                    "size": 6596,
+                    "fileId": 4001569
+                },
+                {
+                    "source": "./images/Microsoft_Teams_98-1.png",
+                    "checksum": "9204eb3eaad94e044cb92ed53d23d4e1",
+                    "size": 3388,
+                    "fileId": 4001570
+                },
+                {
+                    "source": "./images/email.png",
+                    "checksum": "91c043fc7bd2287d3548105d9d20b4c7",
+                    "size": 19041,
+                    "fileId": 4001571
+                }
+            ],
+            "id": 1470343,
+            "url": "communication-with-peers-and-staff",
+            "title": "Communication with peers and staff",
+            "updatedAt": "2024-04-27T14:01:55.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 4,
+            "images": [
+                {
+                    "source": "./images/learning_opportunities.png",
+                    "checksum": "f2d777e18425e86b5a5bb4a2b3d57c12",
+                    "size": 26475,
+                    "fileId": 4001572
+                }
+            ],
+            "id": 1470344,
+            "url": "your-learning-opportunities",
+            "title": "Your learning opportunities",
+            "updatedAt": "2024-04-27T14:01:56.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 5,
+            "images": [],
+            "id": 1470345,
+            "url": "expectations",
+            "title": "Expectations",
+            "updatedAt": "2024-04-27T14:01:56.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 6,
+            "images": [
+                {
+                    "source": "./images/canvas_logo.png",
+                    "checksum": "0021debaf4ebd3505fc042a5515f6937",
+                    "size": 4604,
+                    "fileId": 4001573
+                },
+                {
+                    "source": "./images/zoom_logo-2.png",
+                    "checksum": "1eba4101d1ec7a33f3c61aac8010aaec",
+                    "size": 3005,
+                    "fileId": 4001575
+                },
+                {
+                    "source": "./images/office365_logo_trsp.png",
+                    "checksum": "26e1343fb2c3a099e3a76ebed2db2775",
+                    "size": 4899,
+                    "fileId": 4001576
+                },
+                {
+                    "source": "./images/Microsoft_Teams_98-1.png",
+                    "checksum": "9204eb3eaad94e044cb92ed53d23d4e1",
+                    "size": 3388,
+                    "fileId": 4001570
+                },
+                {
+                    "source": "./images/slack-logo-icon.png",
+                    "checksum": "3e92d152ad3f8d65f13c94d923c43874",
+                    "size": 39983,
+                    "fileId": 4001577
+                },
+                {
+                    "source": "./images/adobe_acrobat_sml.png",
+                    "checksum": "a3388952ee3ccf0529e0cc9fd003ad4d",
+                    "size": 12702,
+                    "fileId": 4001578
+                }
+            ],
+            "id": 1470346,
+            "url": "technical-requirements",
+            "title": "Technical requirements",
+            "updatedAt": "2024-04-28T02:28:34.000Z",
+            "files": [
+                {
+                    "source": "overview\\Adobe_Acrobat_Test.pdf",
+                    "fileId": 4001756,
+                    "checksum": "b46d4975544aeb30f9297e5180cf166e",
+                    "size": 26971
+                }
+            ]
+        },
+        {
+            "chancellorPageId": 7,
+            "images": [
+                {
+                    "source": "./images/Feedback.jpeg",
+                    "checksum": "8c0fdd1f4599025a9f5db392588eb2cf",
+                    "size": 175884,
+                    "fileId": 4001579
+                }
+            ],
+            "id": 1470347,
+            "url": "give-feedback-on-your-learning-experience",
+            "title": "Give feedback on your learning experience",
+            "updatedAt": "2024-04-27T14:02:00.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 8,
+            "images": [
+                {
+                    "source": "./images/octagon-xmark_C7026F_64-1.png",
+                    "checksum": "036e3eb459535606aa7b8e92eaf5ee35",
+                    "size": 3836,
+                    "fileId": 4001580
+                },
+                {
+                    "source": "./images/book-open-cover_009FE3_64-1.png",
+                    "checksum": "5e951a3a36487fed8f6acd716ec8f35e",
+                    "size": 3391,
+                    "fileId": 4001581
+                },
+                {
+                    "source": "./images/circle-question_009FE3_64-1.png",
+                    "checksum": "76f353fd404fcaa7cbe7d81a5954773b",
+                    "size": 3391,
+                    "fileId": 4001582
+                },
+                {
+                    "source": "./images/shield-check_009FE3_64-1.png",
+                    "checksum": "981cdcc84cc1b387843748d94c1eb44e",
+                    "size": 3154,
+                    "fileId": 4001583
+                },
+                {
+                    "source": "./images/safety_belonging/comments-question_009FE3_64-1.png",
+                    "checksum": "77b3bf872fd0c98c9565592ecf0aea81",
+                    "size": 3343,
+                    "fileId": 4001584
+                },
+                {
+                    "source": "./images/safety_belonging/hand-holding-hand_009FE3_64-1.png",
+                    "checksum": "e857a97782d37caa70307f5b0aa45919",
+                    "size": 2176,
+                    "fileId": 4001585
+                },
+                {
+                    "source": "./images/safety_belonging/scale-balanced_009FE3_64-1.png",
+                    "checksum": "3b959cd13226c911cc8cd77215228c20",
+                    "size": 3119,
+                    "fileId": 4001586
+                },
+                {
+                    "source": "./images/safety_belonging/stethoscope_009FE3_64-1.png",
+                    "checksum": "3ed734b118a979af878d28f0c9fed948",
+                    "size": 2721,
+                    "fileId": 4001587
+                },
+                {
+                    "source": "./images/safety_belonging/dreamstime_m_9770412-1.jpg",
+                    "checksum": "e17771bb6bd73f98be627ee046c65b58",
+                    "size": 83689,
+                    "fileId": 4001588
+                },
+                {
+                    "source": "./images/safety_belonging/dreamstime_m_137688666-1.jpg",
+                    "checksum": "791e442c7c8247681c164660c5a67d61",
+                    "size": 102155,
+                    "fileId": 4001589
+                },
+                {
+                    "source": "./images/safety_belonging/dreamstime_m_117044502-1.jpg",
+                    "checksum": "4696d917ab8cbb6e1bd79245d8361434",
+                    "size": 198325,
+                    "fileId": 4001590
+                },
+                {
+                    "source": "./images/safety_belonging/shield-quartered_009FE3_64-1.png",
+                    "checksum": "7dac11ce8a7718d5723a7fe4f68801e5",
+                    "size": 2510,
+                    "fileId": 4001591
+                },
+                {
+                    "source": "./images/safety_belonging/wheelchair_009FE3_64-1.png",
+                    "checksum": "9db66015775019155e2d43c7be28b202",
+                    "size": 2443,
+                    "fileId": 4001592
+                },
+                {
+                    "source": "./images/safety_belonging/calendar-days_009FE3_64-1.png",
+                    "checksum": "e67f485910947394ba96663587e1d804",
+                    "size": 1954,
+                    "fileId": 4001593
+                },
+                {
+                    "source": "./images/safety_belonging/dollar-sign_009FE3_64-1.png",
+                    "checksum": "987c25cb6c842ddd7b0044bc0771861b",
+                    "size": 1662,
+                    "fileId": 4001595
+                }
+            ],
+            "id": 1470348,
+            "url": "safety-and-belonging-in-the-faculty-of-science",
+            "title": "Safety and belonging in the Faculty of Science",
+            "updatedAt": "2024-04-28T02:28:35.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 9,
+            "images": [
+                {
+                    "source": "./images/tips.png",
+                    "checksum": "633d5fc5ccad23bdc69aad09985571ca",
+                    "size": 752347,
+                    "fileId": 4001597
+                },
+                {
+                    "source": "../images/user-graduate-duotone_49_009FE3-1.png",
+                    "checksum": "ba29aaaecf5dcfd5b07791f2badbba83",
+                    "size": 2789,
+                    "fileId": 4001598
+                }
+            ],
+            "id": 1470349,
+            "url": "tips-for-success",
+            "title": "Tips for success",
+            "updatedAt": "2024-04-28T02:28:35.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 10,
+            "images": [],
+            "id": 1470350,
+            "url": "1-dot-1-overview-15",
+            "title": "1.1 Overview",
+            "updatedAt": "2024-04-28T02:28:35.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 11,
+            "images": [],
+            "id": 1470351,
+            "url": "1-dot-2-preparation-for-class",
+            "title": "1.2 Preparation for class",
+            "updatedAt": "2024-04-28T02:28:36.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 12,
+            "images": [],
+            "id": 1470352,
+            "url": "1-dot-3-workshop-slash-tutorial-slash-prac-slash-lab",
+            "title": "1.3 Workshop/Tutorial/Prac/Lab",
+            "updatedAt": "2024-04-27T14:02:11.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 13,
+            "images": [],
+            "id": 1470353,
+            "url": "1-dot-4-workshop-slash-tutorial-slash-prac-slash-lab-solutions",
+            "title": "1.4 Workshop/Tutorial/Prac/Lab Solutions",
+            "updatedAt": "2024-04-27T14:02:11.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 14,
+            "images": [],
+            "id": 1470354,
+            "url": "1-dot-5-after-the-workshop-slash-tutorial-slash-laboratory-slash-prac",
+            "title": "1.5 After the workshop/tutorial/laboratory/prac",
+            "updatedAt": "2024-04-28T02:28:37.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 15,
+            "images": [
+                {
+                    "source": "../images/user-graduate-duotone_49_009FE3-1.png",
+                    "checksum": "ba29aaaecf5dcfd5b07791f2badbba83",
+                    "size": 2789,
+                    "fileId": 4001598
+                }
+            ],
+            "id": 1470355,
+            "url": "1-dot-6-summary",
+            "title": "1.6 Summary",
+            "updatedAt": "2024-04-27T14:02:12.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 16,
+            "images": [],
+            "id": 1470356,
+            "url": "0-dot-1-overview-30",
+            "title": "0.1 Overview",
+            "updatedAt": "2024-04-28T02:28:37.000Z",
+            "files": [
+                {
+                    "source": "week_2\\CAB432Lecture1.3-WhatIsCloud.pdf",
+                    "fileId": 4001742,
+                    "checksum": "88cf3e31a15366d78dfd3ea6c4b5a628",
+                    "size": 3367702
+                }
+            ]
+        },
+        {
+            "chancellorPageId": 17,
+            "images": [
+                {
+                    "source": "img_0_2_1_qut_login.png",
+                    "checksum": "a8c6f044eec96d31f052b39611d3b309",
+                    "size": 242562,
+                    "fileId": 4001600
+                },
+                {
+                    "source": "img_0_2_2_qut_login_sso.png",
+                    "checksum": "6d9b5eca81279c29ee2260bfdb8181fd",
+                    "size": 1852689,
+                    "fileId": 4001601
+                },
+                {
+                    "source": "img_0_2_3_aws_sso_page.png",
+                    "checksum": "052ecb57591786763580f488f8753082",
+                    "size": 27142,
+                    "fileId": 4001602
+                },
+                {
+                    "source": "img_0_2_4_aws_access.png",
+                    "checksum": "3e16d6b926bafbfd1e7e0fe53505d2aa",
+                    "size": 38036,
+                    "fileId": 4001603
+                },
+                {
+                    "source": "img_0_2_5_aws_console.png",
+                    "checksum": "61581074242ba47013d86fb60d561d58",
+                    "size": 132013,
+                    "fileId": 4001604
+                },
+                {
+                    "source": "img_0_2_6_aws_programmatically.png",
+                    "checksum": "57527446802f63a584ac8a685da7d73f",
+                    "size": 68802,
+                    "fileId": 4001605
+                }
+            ],
+            "id": 1470357,
+            "url": "0-dot-2-logging-on-to-qut-aws-cloud-38",
+            "title": "0.2 Logging on to QUT AWS Cloud",
+            "updatedAt": "2024-04-28T02:28:37.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 18,
+            "images": [
+                {
+                    "source": "img_0_3_1_aws_region.png",
+                    "checksum": "0e2c6e0a0d2177e47fde9afeeca35149",
+                    "size": 78288,
+                    "fileId": 4001607
+                },
+                {
+                    "source": "img_0_3_2_launch_ec2.png",
+                    "checksum": "7880ff08b498e138d60cf3a201dc5bee",
+                    "size": 135291,
+                    "fileId": 4001608
+                },
+                {
+                    "source": "img_0_3_3_naming.png",
+                    "checksum": "95d6e8424a7cd7c7a972691a4b4dc5a4",
+                    "size": 35593,
+                    "fileId": 4001609
+                },
+                {
+                    "source": "img_0_3_4_sample_os.png",
+                    "checksum": "f3709cac1ac4626873b20a4042d648b1",
+                    "size": 146443,
+                    "fileId": 4001610
+                },
+                {
+                    "source": "img_0_3_5_network_storage.png",
+                    "checksum": "7eeb9d7584f21cf98e586ca1d88a3344",
+                    "size": 121720,
+                    "fileId": 4001611
+                },
+                {
+                    "source": "img_0_3_6_additional.png",
+                    "checksum": "c90e3572e2084dff1bc3d54aa91f9230",
+                    "size": 60952,
+                    "fileId": 4001612
+                },
+                {
+                    "source": "img_0_3_8_pem_key.png",
+                    "checksum": "296488875c609846b87fa731078d0c69",
+                    "size": 209001,
+                    "fileId": 4001613
+                },
+                {
+                    "source": "img_0_3_7_ec2_filter.png",
+                    "checksum": "77751c7b27aa47709ea795546a3ab748",
+                    "size": 66703,
+                    "fileId": 4001614
+                },
+                {
+                    "source": "img_0_3_9_bastion.png",
+                    "checksum": "0c7fb51a1b43b177c8818e5174b13c55",
+                    "size": 36101,
+                    "fileId": 4001615
+                },
+                {
+                    "source": "img_0_3_10_bastion.png",
+                    "checksum": "7868c83d241572b48b72c6e9c48ab0d1",
+                    "size": 51638,
+                    "fileId": 4001616
+                }
+            ],
+            "id": 1470358,
+            "url": "0-dot-3-creating-an-ec2-instance-34",
+            "title": "0.3 Creating an EC2 Instance",
+            "updatedAt": "2024-04-28T02:28:38.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 19,
+            "images": [
+                {
+                    "source": "img_0_4_1_public_ssh.png",
+                    "checksum": "90d7ff3bf61cb60b38fcf890b959872e",
+                    "size": 20803,
+                    "fileId": 4001617
+                },
+                {
+                    "source": "img_0_4_2_further_details.png",
+                    "checksum": "48dbf36488de62b0339c2f3c7477ab70",
+                    "size": 21822,
+                    "fileId": 4001618
+                }
+            ],
+            "id": 1470359,
+            "url": "0-dot-4-connecting-to-aws-ec2-via-ssh-37",
+            "title": "0.4 Connecting to AWS EC2 via SSH",
+            "updatedAt": "2024-04-28T02:28:39.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 20,
+            "images": [
+                {
+                    "source": "img_0_5_3_remote_ssh.png",
+                    "checksum": "8b17c0c7d2896c719851980c485ac03f",
+                    "size": 31103,
+                    "fileId": 4001619
+                },
+                {
+                    "source": "img_0_5_4_remote.png",
+                    "checksum": "ca264deaa4ac937735891e431f7360d5",
+                    "size": 10418,
+                    "fileId": 4001620
+                },
+                {
+                    "source": "img_0_5_5_remote.png",
+                    "checksum": "ab9be74e227d8ee9cf395c8cbcac935b",
+                    "size": 24846,
+                    "fileId": 4001621
+                },
+                {
+                    "source": "img_0_5_6_remote.png",
+                    "checksum": "64da5a89456445f1a7760bee08edf9cd",
+                    "size": 12388,
+                    "fileId": 4001622
+                },
+                {
+                    "source": "img_0_5_7_remote.png",
+                    "checksum": "5b3ae5b74df6bc67694293d8e5d4cd6b",
+                    "size": 7522,
+                    "fileId": 4001623
+                },
+                {
+                    "source": "img_0_5_10_remote.png",
+                    "checksum": "99372dd6a936cfce5cc65346f44dc1b0",
+                    "size": 172891,
+                    "fileId": 4001624
+                },
+                {
+                    "source": "img_0_5_7_remote.png",
+                    "checksum": "5b3ae5b74df6bc67694293d8e5d4cd6b",
+                    "size": 7522,
+                    "fileId": 4001623
+                },
+                {
+                    "source": "img_0_5_8_remote.png",
+                    "checksum": "bfff427df4061b92757ae25119b16ba9",
+                    "size": 29620,
+                    "fileId": 4001625
+                },
+                {
+                    "source": "img_0_5_9_remote.png",
+                    "checksum": "bfff427df4061b92757ae25119b16ba9",
+                    "size": 29620,
+                    "fileId": 4001626
+                },
+                {
+                    "source": "img_0_5_11_remote.png",
+                    "checksum": "79b6492c5d31eddb72c7d5864adc1a4d",
+                    "size": 11057,
+                    "fileId": 4001627
+                }
+            ],
+            "id": 1470360,
+            "url": "0-dot-5-setting-up-vs-code-for-aws-39",
+            "title": "0.5 Setting up VS Code for AWS",
+            "updatedAt": "2024-04-28T02:28:39.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 21,
+            "images": [],
+            "id": 1470361,
+            "url": "code-with-syntax-highlighting",
+            "title": "Code with Syntax Highlighting",
+            "updatedAt": "2024-04-27T14:02:34.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 22,
+            "images": [],
+            "id": 1470362,
+            "url": "table-of-content",
+            "title": "Table of Content",
+            "updatedAt": "2024-04-27T14:02:35.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 23,
+            "images": [],
+            "id": 1470363,
+            "url": "tables",
+            "title": "Tables",
+            "updatedAt": "2024-04-28T02:28:40.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 24,
+            "images": [],
+            "id": 1470364,
+            "url": "tabs",
+            "title": "Tabs",
+            "updatedAt": "2024-04-28T02:28:40.000Z",
+            "files": []
+        },
+        {
+            "chancellorPageId": 25,
+            "images": [
+                {
+                    "source": "./images/welcome_page.png",
+                    "checksum": "3c9589dddbf6b48bd45d987639cff71b",
+                    "size": 719016,
+                    "fileId": 4002285
+                }
+            ],
+            "files": [
+                {
+                    "source": "examples\\Adobe_Acrobat_Test.pdf",
+                    "fileId": 4002777,
+                    "checksum": "e61efa6608cc92d6099a2c1ea505e593",
+                    "size": 26971
+                }
+            ],
+            "id": 1470383,
+            "url": "chancellor-basics",
+            "title": "Chancellor Basics",
+            "updatedAt": "2024-04-28T02:45:04.000Z"
+        }
+    ]
+}

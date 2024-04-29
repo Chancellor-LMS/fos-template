@@ -97,7 +97,7 @@ Zoom time & communication methods
 
 **Name**: HiQ
 
-**Email**: askqut@qut.edu.au
+**Email**: [askqut@qut.edu.au](mailto:askqut@qut.edu.au)
 
 **Work Phone**: 3138 2000
 

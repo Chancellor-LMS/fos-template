@@ -29,4 +29,5 @@ As part of this unit you will also need to **download** and install some **free*
 | ![Slack Logo](./images/slack-logo-icon.png){style="height: 100px"} | **Slack** will be used to provide informal communication updates to support peer learning. | - How to use [Slack](https://slack.com/intl/en-au/help/categories/360000049043) | \
 | | | |
 | ![Adobe Acrobat Reader](./images/adobe_acrobat_sml.png) | **Adobe Acrobat Reader** is used to read PDF documents. Some of your learning materials will be made available as PDF files. | - [Adobe Acrobat Reader DC](https://get2.adobe.com/reader/) |\
-| | | - :filelink[Test opening a PDF file](https://canvas.qut.edu.au/courses/19735/files/3964474/download?download_frd=1) |
+| | | - :filelink[Test opening a PDF file](./Adobe_Acrobat_Test.pdf) |
+
